@@ -1,0 +1,60 @@
+/* ============================================================
+   COLOR PALETTE & DESIGN TOKENS
+   Korean Students in U.S. Universities — Data Narrative
+   Apply these tokens to ALL visualizations (static & interactive)
+   for a unified visual identity.
+   ============================================================ */
+
+:root {
+  /* Primary palette */
+  --color-primary:       #1A3A5C;   /* Deep navy — headers, key data */
+  --color-accent:        #C0392B;   /* Korean red — highlights, annotations */
+  --color-secondary:     #2980B9;   /* Medium blue — secondary data series */
+  --color-neutral:       #7F8C8D;   /* Gray — gridlines, secondary text */
+
+  /* Background tones */
+  --color-bg:            #FAFAFA;   /* Off-white page background */
+  --color-bg-section:    #F0F4F8;   /* Light blue-gray — alternating sections */
+  --color-bg-card:       #FFFFFF;   /* White — chart cards */
+
+  /* Data encoding (for multi-series charts) */
+  --color-data-1:        #1A3A5C;   /* R1 research universities */
+  --color-data-2:        #C0392B;   /* Liberal arts colleges */
+  --color-data-3:        #27AE60;   /* Community colleges / Other */
+  --color-data-4:        #F39C12;   /* Professional schools */
+  --color-data-5:        #8E44AD;   /* Comparison (China, India) */
+
+  /* Sequential scale for choropleth (light → dark blue) */
+  --choropleth-0:        #EBF5FB;
+  --choropleth-1:        #AED6F1;
+  --choropleth-2:        #5DADE2;
+  --choropleth-3:        #2E86C1;
+  --choropleth-4:        #1A5276;
+
+  /* Typography */
+  --font-heading:        'Georgia', 'Times New Roman', serif;
+  --font-body:           'Inter', 'Helvetica Neue', Arial, sans-serif;
+  --font-mono:           'JetBrains Mono', 'Courier New', monospace;
+
+  --font-size-xs:        0.75rem;
+  --font-size-sm:        0.875rem;
+  --font-size-base:      1rem;
+  --font-size-lg:        1.125rem;
+  --font-size-xl:        1.375rem;
+  --font-size-2xl:       1.75rem;
+  --font-size-3xl:       2.25rem;
+  --font-size-4xl:       3rem;
+
+  /* Spacing */
+  --space-xs:   0.25rem;
+  --space-sm:   0.5rem;
+  --space-md:   1rem;
+  --space-lg:   2rem;
+  --space-xl:   4rem;
+  --space-2xl:  8rem;
+
+  /* Layout */
+  --max-width-content:  720px;
+  --max-width-wide:     1100px;
+  --border-radius:      6px;
+}

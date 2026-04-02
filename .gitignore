@@ -1,0 +1,55 @@
+# Data files (raw data may be large — gitignore if >20MB)
+data/raw/
+# Uncomment the line below to track raw data if all files are small (<20MB total)
+# !data/raw/
+
+# Keep processed data if small enough
+# data/processed/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.env
+.venv
+env/
+venv/
+ENV/
+.python-version
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb~
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# IDEs
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Build artifacts
+dist/
+build/
+*.egg-info/
+
+# Logs
+*.log
+logs/
+
+# Large binary files
+*.pkl
+*.pickle
+*.h5
+*.parquet
+
+# Secrets
+.env
+*.pem
+secrets.yaml

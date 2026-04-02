@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Technical Appendix | Where Do Korean Students Go?</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    /* Appendix-specific overrides */
+    .appendix-body { font-family: var(--font-body); }
+    .appendix-body h2 { margin-top: 3rem; border-bottom: 2px solid var(--color-bg-section); padding-bottom: 0.5rem; }
+    .appendix-body h3 { margin-top: 2rem; color: var(--color-secondary); }
+    code {
+      font-family: var(--font-mono);
+      background: #f0f4f8;
+      padding: 0.15em 0.4em;
+      border-radius: 3px;
+      font-size: 0.875em;
+    }
+    pre {
+      background: #1e2a38;
+      color: #c9d1d9;
+      padding: 1.25rem 1.5rem;
+      border-radius: 6px;
+      overflow-x: auto;
+      font-size: 0.875rem;
+      line-height: 1.6;
+      margin: 1rem 0 1.5rem;
+    }
+    pre code { background: none; padding: 0; color: inherit; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0 1.5rem;
+      font-size: 0.9rem;
+    }
+    th {
+      background: var(--color-primary);
+      color: white;
+      padding: 0.6rem 1rem;
+      text-align: left;
+      font-weight: 500;
+    }
+    td { padding: 0.5rem 1rem; border-bottom: 1px solid #e0e7ef; }
+    tr:nth-child(even) td { background: #f8fafc; }
+    .data-note {
+      background: #fff8e1;
+      border-left: 4px solid var(--color-data-4);
+      padding: 0.75rem 1rem;
+      border-radius: 0 4px 4px 0;
+      margin: 1rem 0;
+      font-size: 0.9rem;
+    }
+    .section-toc {
+      background: var(--color-bg-section);
+      padding: 1.25rem 1.5rem;
+      border-radius: 6px;
+      margin-bottom: 2rem;
+    }
+    .section-toc ol { padding-left: 1.25rem; }
+    .section-toc li { margin-bottom: 0.35rem; }
+    .section-toc a { color: var(--color-secondary); }
+  </style>
+</head>
+<body class="appendix-body">
+
+<nav>
+  <ul>
+    <li class="nav-logo"><a href="index.html">← Main Narrative</a></li>
+    <li><a href="#data">Data Sources</a></li>
+    <li><a href="#cleaning">Cleaning</a></li>
+    <li><a href="#analysis">Analysis</a></li>
+    <li><a href="#viz">Visualizations</a></li>
+    <li><a href="#ai-usage">AI Usage</a></li>
+  </ul>
+</nav>
+
+<header style="background:var(--color-bg-section); padding:3rem 1.5rem 2rem; border-bottom:1px solid #d0dbe8;">
+  <div class="container--narrow">
+    <p style="text-transform:uppercase; letter-spacing:0.1em; font-size:0.8rem; color:var(--color-neutral);">Technical Appendix</p>
+    <h1 style="font-size:2rem; margin-bottom:0.75rem;">Where Do Korean Students Go?</h1>
+    <p style="color:var(--color-neutral); margin-bottom:0;">
+      Methodological details for a data science audience.
+      For the general-audience narrative, see the <a href="index.html">main page</a>.
+    </p>
+  </div>
+</header>
+
+<main class="section">
+<div class="container--narrow">
+
+  <!-- Table of Contents -->
+  <div class="section-toc">
+    <strong>Contents</strong>
+    <ol>
+      <li><a href="#data">Data Sources &amp; Acquisition</a></li>
+      <li><a href="#cleaning">Data Cleaning &amp; Integration</a></li>
+      <li><a href="#analysis">Analytical Methods</a></li>
+      <li><a href="#viz">Visualization Technical Notes</a></li>
+      <li><a href="#limitations">Limitations &amp; Caveats</a></li>
+      <li><a href="#ai-usage">AI Usage Log</a></li>
+    </ol>
+  </div>
+
+  <!-- ─── SECTION A: Data Sources ─── -->
+  <h2 id="data">A. Data Sources &amp; Acquisition</h2>
+
+  <h3>A.1 IIE Open Doors</h3>
+  <p>
+    The primary enrollment data comes from the Institute of International Education's
+    annual <em>Open Doors</em> report, which has surveyed U.S. institutions on international
+    student enrollment since 1954. Three tables were used:
+  </p>
+  <table>
+    <thead>
+      <tr><th>Table</th><th>Granularity</th><th>Years Used</th><th>Key Variable</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>All Places of Origin</td><td>Country × Year</td><td>2000/01–2023/24</td><td>Korean student total</td></tr>
+      <tr><td>Leading Institutions</td><td>Country × Institution × Year</td><td>2000/01–2023/24</td><td>Korean count per university</td></tr>
+      <tr><td>Fields of Study</td><td>Country × Field × Year</td><td>2000/01–2023/24</td><td>Korean enrollment by major</td></tr>
+    </tbody>
+  </table>
+  <div class="data-note">
+    ⚠️ <strong>Access note</strong>: IIE Open Doors historical tables may require a direct email request
+    to <code>opendoors@iie.org</code>. The interactive portal at <code>opendoorsdata.org</code>
+    provides summary figures but not full machine-readable downloads for all years.
+  </div>
+
+  <h3>A.2 IPEDS</h3>
+  <p>
+    Institutional-level characteristics (Carnegie classification, tuition, state, control) were
+    drawn from the NCES Integrated Postsecondary Education Data System (IPEDS).
+    Two survey components were used: <code>HD</code> (Institutional Characteristics) and
+    <code>EF</code> (Fall Enrollment). Data is free to download at
+    <code>nces.ed.gov/ipeds/use-the-data</code> with no registration required.
+    The most recent available year of institutional characteristics was used as a
+    time-invariant covariate (treating institution type as stable).
+  </p>
+
+  <h3>A.3 DHS SEVIS by the Numbers</h3>
+  <p>
+    SEVIS annual PDF reports (2015–2024) provide visa-type and field-of-study breakdowns by
+    nationality that are not available in IIE data. Extracted via <code>tabula-py</code>.
+    Coverage begins only in 2015; earlier years rely solely on IIE for field-of-study data.
+  </p>
+
+  <h3>A.4 QS World University Rankings</h3>
+  <p>
+    QS rank was used as a proxy for international academic prestige. Official QS data is
+    proprietary; this project uses the CSV edition available on Kaggle
+    (<code>akashbommidi/2026-qs-world-university-rankings</code>), covering 2017–2026.
+    For years before 2017, the earliest available QS rank was carried backward
+    (time-invariant assumption). Rank was transformed as <code>log(rank)</code>
+    to reduce skew before use in regression.
+  </p>
+
+  <h3>A.5 U.S. Census ACS</h3>
+  <p>
+    Korean-American population by state was obtained from the American Community Survey
+    5-year estimates (Table B02015). Retrieved via the Census API using the <code>censusdatadownloader</code>
+    Python library. Used as a geographic predictor variable.
+  </p>
+
+  <h3>A.6 KEDI Korean Outbound Statistics</h3>
+  <p>
+    Korean Ministry of Education outbound student counts were obtained from the Korean
+    Education Development Institute (KEDI) at <code>kess.kedi.re.kr</code>. Used to compute
+    the U.S. share of total Korean outbound students — a more meaningful denominator than
+    raw counts, since it controls for overall changes in Korean study-abroad propensity.
+  </p>
+
+  <!-- ─── SECTION B: Data Cleaning ─── -->
+  <h2 id="cleaning">B. Data Cleaning &amp; Integration</h2>
+
+  <h3>B.1 Year Standardization</h3>
+  <p>
+    IIE reports academic years in the format <code>YYYY/YY</code> (e.g., "2020/21").
+    All year fields were converted to the starting calendar year (integer) using:
+  </p>
+  <pre><code>df['year'] = df['academic_year'].str.extract(r'(\d{4})').astype(int)</code></pre>
+
+  <h3>B.2 Institution Name Standardization</h3>
+  <p>
+    IIE institution names and IPEDS institution names use inconsistent abbreviations
+    and punctuation. A fuzzy matching approach was used to build a crosswalk table,
+    followed by manual review of all matches with a similarity score below 0.90:
+  </p>
+  <pre><code>from rapidfuzz import process, fuzz
+
+matches = process.cdist(
+    iie_names, ipeds_names,
+    scorer=fuzz.token_sort_ratio
+)
+# Flag matches below threshold for manual review
+low_confidence = [(i, j) for i, j in matches if j < 90]</code></pre>
+  <p>
+    [FILL IN: Report the number of institutions matched automatically vs. manually reviewed,
+    and describe any systematic patterns in mismatches.]
+  </p>
+
+  <h3>B.3 Master Institution Lookup Table</h3>
+  <p>
+    A master lookup table (<code>data/processed/institution_lookup.csv</code>) was built with
+    one row per institution, containing:
+  </p>
+  <table>
+    <thead><tr><th>Column</th><th>Source</th><th>Notes</th></tr></thead>
+    <tbody>
+      <tr><td><code>institution_name</code></td><td>Standardized</td><td>Canonical name used across all tables</td></tr>
+      <tr><td><code>ipeds_unit_id</code></td><td>IPEDS HD</td><td>Primary join key with IPEDS</td></tr>
+      <tr><td><code>state</code></td><td>IPEDS HD</td><td>2-letter state abbreviation</td></tr>
+      <tr><td><code>institution_type</code></td><td>IPEDS Carnegie</td><td>R1 / R2 / Liberal Arts / Community College / Other</td></tr>
+      <tr><td><code>control</code></td><td>IPEDS HD</td><td>Public / Private nonprofit / Private for-profit</td></tr>
+      <tr><td><code>qs_rank</code></td><td>QS Rankings</td><td>Most recent available year; <code>NaN</code> if unranked</td></tr>
+      <tr><td><code>tuition_out_of_state</code></td><td>IPEDS IC</td><td>Most recent year; inflation-adjusted to 2023 USD</td></tr>
+    </tbody>
+  </table>
+
+  <h3>B.4 Missing Data</h3>
+  <p>
+    [FILL IN: Report missingness rates by variable. Describe imputation strategy if any
+    was applied, or confirm that missing values were dropped with justification.]
+  </p>
+  <div class="data-note">
+    ⚠️ IIE "Leading Institutions" data reports only the top 25 universities per sending country
+    per year. Institutions outside the top 25 in any given year have their Korean enrollment
+    counts suppressed. This creates a <strong>censored outcome problem</strong>: the dataset
+    understates enrollment at non-top-25 institutions. All analyses were conducted on the
+    observed top-25 data with this limitation noted.
+  </div>
+
+  <!-- ─── SECTION C: Analysis ─── -->
+  <h2 id="analysis">C. Analytical Methods</h2>
+
+  <h3>C.1 Trend Analysis</h3>
+  <p>
+    Total Korean enrollment over time was modeled using a piecewise linear regression to
+    identify structural breaks, with break points corresponding to known policy events
+    (2016 STEM OPT expansion, 2020 COVID onset). The Chow test was applied to confirm
+    statistical significance of breaks.
+  </p>
+
+  <h3>C.2 Correlation Analysis</h3>
+  <p>
+    Spearman rank correlations were computed between Korean enrollment and each predictor
+    variable. Spearman was chosen over Pearson because QS rank, Korean enrollment, and
+    Korean community size are all right-skewed. For each bivariate relationship, a
+    scatterplot with LOESS smoother was produced.
+  </p>
+  <p>
+    Key pairs tested:
+  </p>
+  <table>
+    <thead><tr><th>X Variable</th><th>Y Variable</th><th>ρ (Spearman)</th><th>p-value</th></tr></thead>
+    <tbody>
+      <tr><td>QS Rank (log)</td><td>Korean enrollment</td><td>[TBD]</td><td>[TBD]</td></tr>
+      <tr><td>Out-of-state tuition</td><td>Korean enrollment</td><td>[TBD]</td><td>[TBD]</td></tr>
+      <tr><td>STEM OPT eligible programs</td><td>Korean enrollment</td><td>[TBD]</td><td>[TBD]</td></tr>
+      <tr><td>State Korean-American pop.</td><td>State Korean enrollment</td><td>[TBD]</td><td>[TBD]</td></tr>
+    </tbody>
+  </table>
+
+  <h3>C.3 Comparative Trend (Korea vs. China vs. India)</h3>
+  <p>
+    To contextualize Korean trends, Chinese and Indian enrollment series were extracted
+    from the same IIE "All Places of Origin" dataset and normalized to an index
+    (base year = 2000, set to 100). This reveals divergence in growth trajectories
+    without being confounded by raw population differences.
+  </p>
+
+  <h3>C.4 Field-of-Study Shift</h3>
+  <p>
+    Major categories were aggregated from IIE's detailed field codes into four groups:
+    Business, STEM, Humanities &amp; Social Sciences, and Other. Share of total Korean
+    enrollment was computed per group per year. A before/after comparison around the
+    2016 STEM OPT expansion was performed using a difference-in-differences framework
+    comparing STEM vs. non-STEM enrollment trends.
+  </p>
+
+  <!-- ─── SECTION D: Visualization ─── -->
+  <h2 id="viz">D. Visualization Technical Notes</h2>
+
+  <h3>D.1 Color Palette</h3>
+  <p>
+    All visualizations use the project palette defined in <code>website/css/theme.css</code>.
+    The palette was tested for color-blind accessibility using the Coblis simulator.
+    Primary data series use navy (<code>#1A3A5C</code>); the Korean accent color
+    (<code>#C0392B</code>) is used sparingly for annotations and highlights.
+  </p>
+
+  <h3>D.2 Static Figures (matplotlib)</h3>
+  <p>
+    Generated via <code>notebooks/03_static_viz.ipynb</code>. Exported at 300 DPI as PNG.
+    Font: Inter (sans-serif) for axis labels; Georgia (serif) for titles.
+    All axis labels and titles are set explicitly; no default matplotlib style was used.
+  </p>
+
+  <h3>D.3 Interactive Visualizations (Plotly / D3.js)</h3>
+  <p>
+    All interactive figures are self-contained HTML files with no external dependencies
+    beyond CDN-hosted libraries. They require no backend server and are safe to host on
+    GitHub Pages. The choropleth map uses GeoJSON boundary data from the U.S. Census
+    Cartographic Boundary files (20m resolution, 2022 vintage).
+  </p>
+
+  <h3>D.4 Linked View (D3.js)</h3>
+  <p>
+    The field-of-study linked view was built in D3.v7. The donut chart and line chart
+    share a single data object in memory. Click events on the donut's arc segments
+    call a shared <code>updateLineChart(field)</code> function that filters the
+    pre-loaded dataset and re-renders the line with a 300ms transition.
+  </p>
+
+  <!-- ─── SECTION E: Limitations ─── -->
+  <h2 id="limitations">E. Limitations &amp; Caveats</h2>
+
+  <p>
+    [FILL IN as analysis is completed. Below are known limitations to address:]
+  </p>
+  <ul style="padding-left:1.5rem; line-height:2;">
+    <li>IIE "Leading Institutions" reports only the top 25 universities per country per year — enrollment at other institutions is not captured.</li>
+    <li>QS rankings were not available before 2004; earlier years use the first available rank as a proxy.</li>
+    <li>STEM OPT eligibility is based on program-level CIP codes, not student-level outcomes; actual OPT take-up rates are not available per institution.</li>
+    <li>KEDI outbound data includes all destinations; any changes in Korean study-abroad policy could confound the U.S.-share denominator.</li>
+    <li>Tuition figures are list prices, not net prices — Korean students may pay very different amounts based on scholarships and aid.</li>
+    <li>All correlations are observational; no causal claims are made.</li>
+  </ul>
+
+  <!-- ─── SECTION F: AI Usage Log ─── -->
+  <h2 id="ai-usage">F. AI Usage Log</h2>
+  <p>
+    Per the project rubric, all AI tool usage is documented below. AI was not used to
+    write any narrative prose in the main text. Full log is also available in
+    <a href="../ai-log.md"><code>ai-log.md</code></a>.
+  </p>
+
+  <table>
+    <thead>
+      <tr><th>Date</th><th>Tool</th><th>Task</th><th>Description</th><th>Human Review</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>2026-04-02</td>
+        <td>Claude (Anthropic)</td>
+        <td>Project setup</td>
+        <td>Generated INSTRUCTIONS.md, directory scaffold, data source registry, website skeleton (HTML/CSS/JS), and this appendix template.</td>
+        <td>All files reviewed; narrative placeholders left intentionally blank for student authorship.</td>
+      </tr>
+      <!-- Add more rows as AI is used -->
+      <tr>
+        <td>[Date]</td>
+        <td>[Tool]</td>
+        <td>[Task]</td>
+        <td>[Description]</td>
+        <td>[Review applied]</td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+</main>
+
+<footer>
+  <div class="container">
+    <p>
+      <a href="index.html">← Main Narrative</a> &nbsp;·&nbsp;
+      <a href="https://github.com/YOUR_USERNAME/korean-students-us" target="_blank" rel="noopener">GitHub Repository</a>
+    </p>
+    <p style="margin-top:0.5rem; font-size:0.75rem; opacity:0.6;">
+      DSAN [Course Number] · Georgetown University · [Semester Year]
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>

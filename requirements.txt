@@ -1,0 +1,30 @@
+# ── Core data processing ──────────────────────────────────────────────
+pandas>=2.0
+numpy>=1.26
+openpyxl>=3.1          # Read .xlsx files (IIE, KEDI data)
+xlrd>=2.0              # Read legacy .xls files
+
+# ── Data cleaning & matching ──────────────────────────────────────────
+rapidfuzz>=3.0          # Fuzzy institution name matching
+tabula-py>=2.9          # Extract tables from SEVIS PDFs (requires Java)
+PyMuPDF>=1.24           # PDF text extraction (alternative to tabula)
+
+# ── Analysis ──────────────────────────────────────────────────────────
+scipy>=1.11             # Spearman correlations, Chow test
+statsmodels>=0.14       # Regression, structural break tests
+scikit-learn>=1.4       # If any ML is used
+
+# ── Static visualization ───────────────────────────────────────────────
+matplotlib>=3.8
+seaborn>=0.13
+
+# ── Interactive visualization ──────────────────────────────────────────
+plotly>=5.20            # Choropleth map, scatter explorer
+
+# ── Census data ────────────────────────────────────────────────────────
+census>=0.8             # Census API Python wrapper
+us>=2.0                 # U.S. state metadata
+
+# ── Notebook environment ────────────────────────────────────────────────
+jupyter>=1.0
+ipykernel>=6.0

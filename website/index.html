@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Where Do Korean Students Go? | Data Narrative</title>
+  <meta name="description" content="A data-driven narrative on how Korean international students have shifted across U.S. universities over two decades — and why." />
+  <link rel="stylesheet" href="css/styles.css" />
+  <!-- Plotly for interactive charts -->
+  <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+  <!-- D3 for linked views -->
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════
+     NAVIGATION
+══════════════════════════════════════════════ -->
+<nav>
+  <ul>
+    <li class="nav-logo"><a href="#">Korean Students in the U.S.</a></li>
+    <li><a href="#where">Where?</a></li>
+    <li><a href="#universities">Which Schools?</a></li>
+    <li><a href="#why">Why?</a></li>
+    <li><a href="#change">What Changed?</a></li>
+    <li><a href="appendix.html">Appendix</a></li>
+  </ul>
+</nav>
+
+<!-- ══════════════════════════════════════════════
+     HERO / HOOK
+══════════════════════════════════════════════ -->
+<header class="hero">
+  <div class="container">
+    <p class="hero-kicker">A Data-Driven Narrative</p>
+    <h1>Where Do Korean Students Go?</h1>
+    <p class="subtitle">
+      For two decades, South Korean students have been one of the largest groups of
+      international students in the United States. But <em>where</em> they go —
+      and why — has shifted in ways the headline numbers don't capture.
+    </p>
+    <p class="byline">By [Author Name] &nbsp;·&nbsp; [Date] &nbsp;·&nbsp; Data: IIE Open Doors, IPEDS, DHS SEVIS</p>
+  </div>
+</header>
+
+<!-- ══════════════════════════════════════════════
+     SECTION 1 — HOOK: THE BIG PICTURE
+══════════════════════════════════════════════ -->
+<section class="section" id="overview">
+  <div class="container--narrow">
+
+    <!-- WRITE YOUR HOOK PARAGRAPH HERE (150–200 words) -->
+    <!-- Do NOT use AI to write this. Suggested opening: start with the most surprising
+         statistic from your EDA — e.g., the peak year, the steepest drop, or the
+         unexpected correlation you found. -->
+
+    <p class="placeholder-text" style="color:#aaa; font-style:italic;">
+      [Author: Write your 150–200 word hook here. Lead with the most surprising statistic
+      from your EDA. Example frame: "At its peak in [YEAR], [N] Korean students were
+      enrolled at U.S. universities — one in every [X] international students. By [YEAR],
+      that number had fallen by [%]. But the total decline masks a more interesting story:
+      where they went changed even more dramatically than how many came."]
+    </p>
+
+    <!-- INFOGRAPHIC / STATIC FIGURE 1: Time series goes here -->
+    <div class="chart-wrapper">
+      <h3>Korean Students in U.S. Universities, 2000–2023</h3>
+      <!-- Replace src with path to your exported figure -->
+      <img
+        src="../figures/static/01_timeseries.png"
+        alt="Line chart of Korean student enrollment in U.S. universities, 2000–2023, with annotations for major historical events"
+        style="width:100%; height:auto;"
+        id="timeseries-placeholder"
+      />
+      <!-- Fallback: interactive Plotly version (uncomment when ready)
+      <div id="chart-timeseries" style="height:450px;"></div>
+      -->
+      <p class="chart-caption">
+        Source: IIE Open Doors, 2000–2023. Annotations mark IMF recovery period,
+        post-9/11 dip, 2008 financial crisis, 2016 STEM OPT expansion, and COVID-19 onset.
+      </p>
+    </div>
+
+    <!-- Key stats callout row -->
+    <div class="stat-grid">
+      <div class="stat-card">
+        <span class="number" id="stat-peak">—</span>
+        <span class="label">Peak enrollment (year TBD)</span>
+      </div>
+      <div class="stat-card">
+        <span class="number" id="stat-current">—</span>
+        <span class="label">Most recent year count</span>
+      </div>
+      <div class="stat-card">
+        <span class="number" id="stat-change">—</span>
+        <span class="label">Change from peak</span>
+      </div>
+      <div class="stat-card">
+        <span class="number" id="stat-rank">—</span>
+        <span class="label">Rank among sending countries</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     SECTION 2 — WHERE DO THEY GO? (Geographic)
+══════════════════════════════════════════════ -->
+<section class="section section--alt" id="where">
+  <div class="container">
+    <h2>Where Do They Go?</h2>
+    <div class="container--narrow" style="padding:0;">
+
+      <!-- WRITE YOUR 300–400 WORD GEOGRAPHIC SECTION HERE -->
+      <p class="placeholder-text" style="color:#aaa; font-style:italic;">
+        [Author: 300–400 words describing the geographic concentration findings.
+        Which states dominate? How has the CA/NY share changed vs. the rest of the
+        country? Are there any surprising states gaining ground? Connect the pattern
+        to the data before introducing the map.]
+      </p>
+
+    </div>
+
+    <!-- INTERACTIVE VIZ #1: Choropleth map with year slider -->
+    <div class="chart-wrapper">
+      <h3>Korean Students by State, 2000–2023</h3>
+      <iframe
+        src="../figures/interactive/map_choropleth.html"
+        height="520"
+        title="Choropleth map of Korean student distribution by U.S. state with year slider"
+        loading="lazy"
+      ></iframe>
+      <!-- Placeholder until figure is built -->
+      <div id="map-placeholder" class="viz-placeholder">
+        <p>📍 Interactive choropleth map — coming in Phase 4</p>
+        <p style="font-size:0.85rem;">Will show: Korean students per state by year, with slider (2000–2023) and hover tooltips.</p>
+      </div>
+      <p class="chart-caption">
+        Source: IIE Open Doors. Hover over a state to see student count and top 3 universities.
+        Use the year slider to explore how distribution has shifted over time.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     SECTION 3 — THE UNIVERSITIES THEY CHOOSE
+══════════════════════════════════════════════ -->
+<section class="section" id="universities">
+  <div class="container">
+    <h2>The Universities They Choose</h2>
+    <div class="container--narrow" style="padding:0;">
+
+      <!-- WRITE YOUR 300–400 WORD UNIVERSITIES SECTION HERE -->
+      <p class="placeholder-text" style="color:#aaa; font-style:italic;">
+        [Author: 300–400 words discussing the top 20 universities and what they share
+        in common. Are they research-intensive? Located near Korean-American communities?
+        Do they cluster in certain states? What changed in the ranking of institutions
+        over the study period?]
+      </p>
+
+    </div>
+
+    <!-- STATIC VIZ #2: Top 20 universities bar chart -->
+    <div class="chart-wrapper">
+      <h3>Top 20 Universities by Average Korean Enrollment</h3>
+      <img
+        src="../figures/static/02_top20_universities.png"
+        alt="Horizontal bar chart showing the top 20 U.S. universities by average Korean student enrollment, color-coded by institution type"
+        style="width:100%; height:auto;"
+        id="top20-placeholder"
+      />
+      <p class="chart-caption">
+        Source: IIE Open Doors, 2000–2023. Color indicates institution type:
+        <span style="color:var(--color-data-1);">■ R1 Research</span>
+        <span style="color:var(--color-data-2); margin-left:0.5rem;">■ Liberal Arts</span>
+        <span style="color:var(--color-data-3); margin-left:0.5rem;">■ Other</span>
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     SECTION 4 — WHY THOSE UNIVERSITIES?
+══════════════════════════════════════════════ -->
+<section class="section section--alt" id="why">
+  <div class="container">
+    <h2>Why Those Universities?</h2>
+    <div class="container--narrow" style="padding:0;">
+
+      <!-- WRITE YOUR 400–500 WORD ANALYSIS SECTION HERE -->
+      <p class="placeholder-text" style="color:#aaa; font-style:italic;">
+        [Author: 400–500 words presenting the multi-variable analysis. Is it rankings
+        that drive enrollment? STEM OPT eligibility post-2016? Tuition cost? Proximity to
+        Korean-American communities? Introduce the scatter plot and walk the reader through
+        what the data reveals. Avoid stating conclusions before the reader has had a chance
+        to explore — let the visualization do some of the work.]
+      </p>
+
+      <blockquote>
+        <!-- Replace with your actual key finding quote -->
+        [Author: Pull the most striking analytical finding here as a pull quote — one sentence.]
+      </blockquote>
+
+    </div>
+
+    <!-- INTERACTIVE VIZ #2: Multi-variable scatter plot -->
+    <div class="chart-wrapper">
+      <h3>What Predicts Korean Student Enrollment?</h3>
+      <iframe
+        src="../figures/interactive/scatter_explorer.html"
+        height="580"
+        title="Interactive scatter plot: university characteristics vs Korean student enrollment"
+        loading="lazy"
+      ></iframe>
+      <div id="scatter-placeholder" class="viz-placeholder">
+        <p>🔍 Interactive scatter plot — coming in Phase 4</p>
+        <p style="font-size:0.85rem;">
+          Will show: one dot per university. X-axis selectable (QS rank / tuition / STEM OPT /
+          Korean population). Dot size = total international enrollment. Color = institution type.
+        </p>
+      </div>
+      <p class="chart-caption">
+        Source: IIE Open Doors, IPEDS, QS Rankings, U.S. Census ACS.
+        Use the dropdown to change the X-axis variable. Hover over any university for details.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     SECTION 5 — WHAT CHANGED AND WHY?
+══════════════════════════════════════════════ -->
+<section class="section" id="change">
+  <div class="container">
+    <h2>What Changed — and Why?</h2>
+    <div class="container--narrow" style="padding:0;">
+
+      <!-- WRITE YOUR 300–400 WORD CHANGE SECTION HERE -->
+      <p class="placeholder-text" style="color:#aaa; font-style:italic;">
+        [Author: 300–400 words connecting macro events to shifts in the data.
+        Discuss: COVID impact on enrollment and distribution, 2016 STEM OPT extension
+        (17→36 months) and its effect on STEM program enrollment, Korean domestic
+        economic conditions, visa policy changes. Use the linked view below to show
+        how different majors responded differently to these events.]
+      </p>
+
+    </div>
+
+    <!-- LINKED VIEW: Field of study donut → enrollment trend -->
+    <div class="chart-wrapper">
+      <h3>How Did Major Choice Shift Over Time?</h3>
+      <p style="font-size:0.9rem; color:var(--color-neutral); margin-bottom:1rem;">
+        Click a field of study in the left panel to update the trend line on the right.
+      </p>
+      <iframe
+        src="../figures/interactive/linked_major_trend.html"
+        height="500"
+        title="Linked view: field of study donut chart linked to enrollment trend line"
+        loading="lazy"
+      ></iframe>
+      <div id="linked-placeholder" class="viz-placeholder">
+        <p>🔗 Linked view — coming in Phase 4</p>
+        <p style="font-size:0.85rem;">
+          Left: clickable donut chart of major categories.
+          Right: enrollment trend for selected major, 2000–2023.
+        </p>
+      </div>
+      <p class="chart-caption">
+        Source: IIE Open Doors, Fields of Study by Place of Origin.
+        The 2016 STEM OPT extension (from 17 to 36 months) is marked on the timeline.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     SECTION 6 — CONCLUSION
+══════════════════════════════════════════════ -->
+<section class="section section--alt" id="conclusion">
+  <div class="container--narrow">
+    <h2>What the Data Tells Us</h2>
+
+    <!-- WRITE YOUR 150–200 WORD CONCLUSION HERE -->
+    <p class="placeholder-text" style="color:#aaa; font-style:italic;">
+      [Author: 150–200 word conclusion. Summarize 3 key takeaways in plain language,
+      then close with 1 open question for the reader to sit with.]
+    </p>
+
+    <!-- Infographic summary -->
+    <div class="chart-wrapper" style="text-align:center;">
+      <h3>Korean Students in America — At a Glance</h3>
+      <img
+        src="../figures/static/infographic_summary.png"
+        alt="Infographic summarizing key findings: peak enrollment year, current numbers, top states, universities, and majors"
+        style="width:100%; max-width:700px; height:auto;"
+      />
+      <p class="chart-caption">
+        All figures from IIE Open Doors 2023. See the
+        <a href="appendix.html">technical appendix</a> for methodology.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     FOOTER
+══════════════════════════════════════════════ -->
+<footer>
+  <div class="container">
+    <p>
+      Data sources: IIE Open Doors · IPEDS (NCES) · DHS SEVIS · KEDI · QS World University Rankings · U.S. Census ACS
+    </p>
+    <p style="margin-top:0.5rem;">
+      <a href="appendix.html">Technical Appendix</a> &nbsp;·&nbsp;
+      <a href="#ai-usage">AI Usage Log</a> &nbsp;·&nbsp;
+      <a href="https://github.com/YOUR_USERNAME/korean-students-us" target="_blank" rel="noopener">GitHub Repository</a>
+    </p>
+    <p style="margin-top:1rem; font-size:0.75rem; opacity:0.6;">
+      Created for DSAN [Course Number] · Georgetown University · [Semester Year]
+    </p>
+  </div>
+</footer>
+
+<!-- ══════════════════════════════════════════════
+     SCRIPTS
+══════════════════════════════════════════════ -->
+<script src="js/main.js"></script>
+
+<style>
+  /* Inline styles for placeholder state (remove when figures are ready) */
+  .viz-placeholder {
+    background: #f0f4f8;
+    border: 2px dashed #c5cdd6;
+    border-radius: 6px;
+    padding: 3rem 2rem;
+    text-align: center;
+    color: #7f8c8d;
+    margin-bottom: 0.5rem;
+  }
+  .hero-kicker {
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-size: 0.8rem;
+    opacity: 0.7;
+    margin-bottom: 1rem;
+  }
+  /* Hide static img placeholders when file doesn't exist yet */
+  img[src*="figures/static"]:not([src=""]) {
+    display: none;
+  }
+  /* Show iframe placeholder divs only when iframe src doesn't resolve */
+</style>
+
+</body>
+</html>
