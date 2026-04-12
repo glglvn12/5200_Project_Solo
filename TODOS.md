@@ -15,8 +15,9 @@
 **Note:** The appendix table (ρ=−0.210 for QS, ρ=+0.243 for tuition) is most likely the ground truth since it shows p-values and n.
 
 ### Fill placeholders
-**What:** [Author Name] in index.html:88, YOUR_USERNAME in index.html:495 and appendix.html:434.
+**What:** [Author Name] in index.html:88.
 **Why:** Grader will see literal "[Author Name]" in the byline.
+**Note:** YOUR_USERNAME GitHub placeholder fixed by /qa on 2026-04-12 (commits 5de81a0). ai-log.md link fixed (commit 0f2ac50). STEM year error "31% in 2016" corrected to "31% in 2015" (commit 9ed05c8).
 
 ### Deploy to GitHub Pages
 **What:** Configure GitHub Pages (Settings → Pages → Source: main branch / root or /website) and add live URL to README.md and index.html hero byline.
