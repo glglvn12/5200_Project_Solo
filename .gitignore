@@ -52,3 +52,4 @@ logs/
 .env
 *.pem
 secrets.yaml
+.gstack/

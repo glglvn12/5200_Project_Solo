@@ -2,17 +2,14 @@
 
 ## Pre-submission (required)
 
-### Reconcile enrollment numbers
-**What:** The narrative prose uses 43,149 (2023/24 year) as the "current" enrollment figure throughout, but the stat card hardcode and summary_stats.json use 42,293 (2024/25). Decide on one reference year and make all values consistent.
-**Why:** A grader reading the page will see "43,149" in the prose and "42,293" in the stat card side by side — they look like a typo or data error.
-**How to fix:** Open notebooks/02_eda.ipynb, pick one year as the "current" reference, update index.html:103,143,410 and summary_stats.json.current_enrollment to match.
-**Depends on:** Correlation value verification pass (do these together in the notebook).
+### ~~Reconcile enrollment numbers~~ FIXED 2026-04-12
+**Resolution:** Standardized on 2024 data (42,293). Section 1 overview updated: "Sixteen years later, that number had fallen to 42,293: a decline of 43.7 percent." Section 5 retains 43,149 as a historical 2023 reference (COVID recovery narrative). Stat cards and JSON already used 2024 — no change needed there.
 
-### Verify and reconcile correlation values
-**What:** The QS correlation appears as: r=−0.14 (narrative), ρ=0.011 (stats.json), ρ=−0.210 (appendix table). The tuition correlation appears as: r=0.28 (narrative), ρ=0.24 (stats.json), ρ=+0.243 (appendix table). These need to match.
-**Why:** A grader who reads both the narrative and the appendix will notice the numbers differ. The sign flip on QS (negative vs. positive) is particularly visible.
-**How to fix:** Run notebooks/02_eda.ipynb → find actual Spearman outputs → update narrative (index.html:300,308) and stats.json to match the appendix table values (which appear to come from actual code).
-**Note:** The appendix table (ρ=−0.210 for QS, ρ=+0.243 for tuition) is most likely the ground truth since it shows p-values and n.
+### ~~Verify and reconcile correlation values~~ FIXED 2026-04-12
+**Resolution:** Ground truth from notebooks/02_eda.ipynb (cell 12, cell 24):
+- QS: Spearman ρ = −0.210 (p=0.5363). Fixed: narrative −0.14 → −0.21; JSON 0.011 (sign was wrong!) → −0.210. Appendix was already correct.
+- Tuition: Spearman ρ = +0.243 (p=0.2417). Fixed: narrative r=0.28 → ρ=0.24; JSON 0.24 → 0.243. Appendix was already correct.
+- Also fixed: JSON top_university_avg was USC (correct per EDA: 11,176/yr avg). Narrative incorrectly said "NYU has led this list" — corrected to USC leads, NYU follows.
 
 ### Fill placeholders
 **What:** [Author Name] in index.html:88.
@@ -23,6 +20,5 @@
 **What:** Configure GitHub Pages (Settings → Pages → Source: main branch / root or /website) and add live URL to README.md and index.html hero byline.
 **Why:** The site exists only locally. GitHub Pages is required to submit a live URL.
 
-### Add AI log entry for narrative authorship
-**What:** Add an entry to ai-log.md and the appendix AI usage table documenting "Student authored narrative prose for all 6 sections."
-**Why:** The current log entries say "narrative placeholders left blank for student authorship" — there's no entry showing the narrative was eventually written by the student. The log is incomplete.
+### ~~Add AI log entry for narrative authorship~~ FIXED 2026-04-12
+**Resolution:** Added Entry 8 (student narrative authorship, 2026-04-08) and Entry 9 (Claude fact-check corrections, 2026-04-12) to both ai-log.md and website/ai-log.md. Added two corresponding rows to website/appendix.html AI usage table.

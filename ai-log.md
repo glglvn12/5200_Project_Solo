@@ -64,4 +64,22 @@ This file documents every instance of AI tool use in this project, per the cours
 - **Description**: Applied all fixes identified in Figure Quality Report: (1) Fig 02 — corrected x-axis label from "International Student Enrollment" to "Korean Student Enrollment" in notebook 03 Cell 5; (2) Fig 03 — fixed flat right-panel lines by computing state shares using national total from country_comparison.csv as denominator (previously used sum of tracked states only); CA share now shows 27.0%→30.0%, NY share 10.8%→12.0%; (3) Fig 05 — replaced empty Non-STEM comparison (has_strong_stem=1 for all 45 institutions) with high/low STEM split using pct_programs_stem median (0.44) — high STEM = 6 institutions with ≥44% STEM programs, low STEM = 39 institutions; (4) Fig 06 — fixed STEM OPT annotation using data-derived y position instead of ax2.get_ylim() called before lines are drawn; (5) Fig 10 — changed from 2000→2024 comparison (all grew) to estimated Korean enrollment 2008→2024 using institution's proportional share of tracked international students × national Korean total; colored by outperformed vs underperformed national avg decline of −43.7% (2 outperformed, 13 underperformed). Updated appendix Spearman table: tuition ρ changed from 0.474 (cross-institution all-years) to 0.24 (2023 cross-sectional, p=0.242) to match actual figure computation. Updated summary_stats.json accordingly. Applied same code changes to notebooks 02 and 03 source cells.
 - **Human oversight applied**: Student should review Fig 05 interpretation — the STEM grouping is now high/low pct_programs_stem split, not STEM vs non-STEM institution type. Fig 10 uses estimated Korean enrollment (proportional allocation), not direct observation; caption includes this caveat. Tuition correlation is not statistically significant (p=0.242); student should update narrative accordingly.
 
+## Entry 8
+- **Date**: 2026-04-08
+- **Tool**: None (human-authored)
+- **Task**: Narrative prose authorship — all 6 sections
+- **Description**: Student wrote all narrative prose for the six story-beat sections of website/index.html: (1) Hook/Overview — framing the 43.7% decline since 2008; (2) Rise — context for the 2000s growth era; (3) Peak and Turn — 2008 peak and the factors behind the reversal; (4) The Decline — decade-long enrollment fall and contributing causes; (5) The Argument — analytical interpretation of STEM OPT extension policy impact and university-level variation; (6) Conclusion/Reflection — remaining questions and data limitations. All interpretive claims, transitions, and analytical framing are original student writing. No AI-generated prose appears in the published narrative.
+- **Human oversight applied**: Full authorship by student; AI tools were not used to draft, revise, or expand any narrative text.
+
+---
+
+## Entry 9
+- **Date**: 2026-04-12
+- **Tool**: Claude (Anthropic)
+- **Task**: Narrative fact-check and correction against EDA notebook ground truth
+- **Description**: Cross-referenced all quantitative claims in website/index.html against the EDA notebook (notebooks/02_eda.ipynb) and processed CSVs. Five corrections applied: (1) Section 1 enrollment year — changed "43,149" (2023 figure) to "42,293" (2024, matching stat cards and summary_stats.json); decline percentage updated from 42.5% to 43.7%. (2) Section 4 QS correlation — corrected narrative ρ from −0.14 to −0.21 (ground truth: Spearman ρ = −0.210, p=0.536, from notebook cell 12). (3) Section 4 tuition correlation — corrected r=0.28 to ρ=0.24 (ground truth: 0.243, p=0.242, from notebook cell 24). (4) Section 4 university ranking — corrected "NYU has led this list" to "USC has led this list" (ground truth: USC averages 11,176 Korean students/yr, confirmed in EDA summary). (5) Section 4 business % baseline — added 2009 anchor year ("from roughly 17 percent (2009) to 12 percent by 2024") consistent with field_of_study_timeseries.csv. Also corrected summary_stats.json: spearman_qs_vs_enrollment from 0.011 (wrong sign) to −0.210; spearman_tuition_vs_enrollment from 0.24 to 0.243.
+- **Human oversight applied**: All corrections verified against notebook output cells before applying. Narrative framing and interpretation remain student-authored; only numeric claims were updated.
+
+---
+
 <!-- Add new entries below as AI is used -->

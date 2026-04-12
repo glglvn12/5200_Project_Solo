@@ -9,8 +9,8 @@
   "top_state_2023_count": 12945,
   "top_university_avg": "University of Southern California",
   "top_field_latest": "STEM",
-  "spearman_tuition_vs_enrollment": 0.24,
-  "spearman_qs_vs_enrollment": 0.011,
+  "spearman_tuition_vs_enrollment": 0.243,
+  "spearman_qs_vs_enrollment": -0.210,
   "n_institutions_tracked": 45,
   "n_years": 25
 }
