@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Korean Students by Field of Study — Linked View</title>
+<script src="https://cdn.plot.ly/plotly-2.32.0.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Arial, sans-serif; background: #fff; color: #2C3E50; }
+  #header { padding: 18px 24px 10px; border-bottom: 2px solid #EBF5FB; }
+  #header h2 { font-size: 1.1rem; color: #1A3A5C; font-weight: 700; }
+  #header p  { font-size: 0.8rem; color: #7F8C8D; margin-top: 4px; }
+  #main { display: flex; gap: 0; padding: 0; }
+  #left-panel  { width: 340px; flex-shrink: 0; padding: 12px 8px 12px 16px; border-right: 1px solid #EBF5FB; }
+  #right-panel { flex: 1; padding: 12px 16px 12px 8px; }
+  .panel-title { font-size: 0.82rem; font-weight: 700; color: #1A3A5C;
+                  text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 6px; }
+  #donut-hint { font-size: 0.75rem; color: #7F8C8D; margin-bottom: 6px; }
+  #line-title  { font-size: 0.9rem; font-weight: 700; color: #1A3A5C; margin-bottom: 4px; }
+  #legend      { margin-top: 8px; }
+  .leg-row     { display: flex; align-items: center; gap: 6px; font-size: 0.8rem;
+                  padding: 3px 6px; border-radius: 4px; cursor: pointer;
+                  transition: background 0.15s; }
+  .leg-row:hover { background: #EBF5FB; }
+  .leg-row.active { background: #D6EAF8; font-weight: 700; }
+  .leg-swatch  { width: 12px; height: 12px; border-radius: 50%; flex-shrink: 0; }
+  #caption     { font-size: 0.72rem; color: #95A5A6; margin-top: 8px;
+                  padding: 0 16px 10px; }
+</style>
+</head>
+<body><style>
+#plotly-offline-notice {display:none;padding:2rem;text-align:center;font-family:sans-serif;color:#555;background:#f8f9fa;border-radius:6px;margin:1rem;}
+</style>
+<div id="plotly-offline-notice">
+  <p style="font-size:1.1rem;font-weight:600;">⚠️ Chart requires internet access</p>
+  <p style="margin-top:0.5rem;">This interactive figure uses Plotly.js from a CDN.<br>
+  Please view the live site at the URL in the project README, or ensure you have internet access.</p>
+</div>
+<script>
+(function() {
+  var s = document.currentScript;
+  var notice = document.getElementById('plotly-offline-notice');
+  window.addEventListener('error', function(e) {
+    if (e.target && e.target.src && e.target.src.indexOf('plotly') !== -1) {
+      if (notice) notice.style.display = 'block';
+    }
+  }, true);
+})();
+</script>
+<div id="header">
+  <h2>Korean Students in the U.S. by Field of Study</h2>
+  <p>Latest year (2024/25): click a field to explore its trend 2009–2024</p>
+</div>
+<div id="main">
+  <div id="left-panel">
+    <div class="panel-title">Field Distribution</div>
+    <div id="donut-hint">Click any slice or label to filter →</div>
+    <div id="donut"></div>
+    <div id="legend"></div>
+  </div>
+  <div id="right-panel">
+    <div id="line-title">Select a field of study from the left</div>
+    <div id="linechart"></div>
+  </div>
+</div>
+<div id="caption">
+  Source: IIE Open Doors, Fields of Study by Place of Origin (2009/10–2024/25).
+  Percentages from IIE; student counts derived as pct × annual total.
+</div>
+
+<script>
+const ALL_DATA    = [{"year": 2009, "year_label": "2009/10", "field": "Arts & Design", "count": 7793, "pct": 10.8, "total": 72153}, {"year": 2009, "year_label": "2009/10", "field": "Business & Management", "count": 12266, "pct": 17.0, "total": 72153}, {"year": 2009, "year_label": "2009/10", "field": "Education", "count": 2814, "pct": 3.9, "total": 72153}, {"year": 2009, "year_label": "2009/10", "field": "Humanities & Social Sciences", "count": 10606, "pct": 14.7, "total": 72153}, {"year": 2009, "year_label": "2009/10", "field": "Other", "count": 16667, "pct": 23.1, "total": 72153}, {"year": 2009, "year_label": "2009/10", "field": "STEM", "count": 22007, "pct": 30.5, "total": 72153}, {"year": 2010, "year_label": "2010/11", "field": "Arts & Design", "count": 8949, "pct": 12.2, "total": 73351}, {"year": 2010, "year_label": "2010/11", "field": "Business & Management", "count": 12470, "pct": 17.0, "total": 73351}, {"year": 2010, "year_label": "2010/11", "field": "Education", "count": 2714, "pct": 3.7, "total": 73351}, {"year": 2010, "year_label": "2010/11", "field": "Humanities & Social Sciences", "count": 10783, "pct": 14.7, "total": 73351}, {"year": 2010, "year_label": "2010/11", "field": "Other", "count": 17017, "pct": 23.2, "total": 73351}, {"year": 2010, "year_label": "2010/11", "field": "STEM", "count": 21418, "pct": 29.200000000000003, "total": 73351}, {"year": 2011, "year_label": "2011/12", "field": "Arts & Design", "count": 8025, "pct": 11.1, "total": 72295}, {"year": 2011, "year_label": "2011/12", "field": "Business & Management", "count": 12146, "pct": 16.8, "total": 72295}, {"year": 2011, "year_label": "2011/12", "field": "Education", "count": 2313, "pct": 3.2, "total": 72295}, {"year": 2011, "year_label": "2011/12", "field": "Humanities & Social Sciences", "count": 12146, "pct": 16.8, "total": 72295}, {"year": 2011, "year_label": "2011/12", "field": "Other", "count": 15977, "pct": 22.1, "total": 72295}, {"year": 2011, "year_label": "2011/12", "field": "STEM", "count": 21688, "pct": 30.0, "total": 72295}, {"year": 2012, "year_label": "2012/13", "field": "Arts & Design", "count": 9464, "pct": 13.4, "total": 70627}, {"year": 2012, "year_label": "2012/13", "field": "Business & Management", "count": 11583, "pct": 16.4, "total": 70627}, {"year": 2012, "year_label": "2012/13", "field": "Education", "count": 2189, "pct": 3.1, "total": 70627}, {"year": 2012, "year_label": "2012/13", "field": "Humanities & Social Sciences", "count": 11653, "pct": 16.5, "total": 70627}, {"year": 2012, "year_label": "2012/13", "field": "Other", "count": 16174, "pct": 22.9, "total": 70627}, {"year": 2012, "year_label": "2012/13", "field": "STEM", "count": 19564, "pct": 27.700000000000003, "total": 70627}, {"year": 2013, "year_label": "2013/14", "field": "Arts & Design", "count": 8710, "pct": 12.8, "total": 68047}, {"year": 2013, "year_label": "2013/14", "field": "Business & Management", "count": 11568, "pct": 17.0, "total": 68047}, {"year": 2013, "year_label": "2013/14", "field": "Education", "count": 2109, "pct": 3.1, "total": 68047}, {"year": 2013, "year_label": "2013/14", "field": "Humanities & Social Sciences", "count": 11160, "pct": 16.4, "total": 68047}, {"year": 2013, "year_label": "2013/14", "field": "Other", "count": 14290, "pct": 21.0, "total": 68047}, {"year": 2013, "year_label": "2013/14", "field": "STEM", "count": 20210, "pct": 29.7, "total": 68047}, {"year": 2014, "year_label": "2014/15", "field": "Arts & Design", "count": 7581, "pct": 11.9, "total": 63710}, {"year": 2014, "year_label": "2014/15", "field": "Business & Management", "count": 10640, "pct": 16.7, "total": 63710}, {"year": 2014, "year_label": "2014/15", "field": "Education", "count": 1911, "pct": 3.0, "total": 63710}, {"year": 2014, "year_label": "2014/15", "field": "Humanities & Social Sciences", "count": 10321, "pct": 16.2, "total": 63710}, {"year": 2014, "year_label": "2014/15", "field": "Other", "count": 13570, "pct": 21.3, "total": 63710}, {"year": 2014, "year_label": "2014/15", "field": "STEM", "count": 19750, "pct": 31.0, "total": 63710}, {"year": 2015, "year_label": "2015/16", "field": "Arts & Design", "count": 7870, "pct": 12.9, "total": 61007}, {"year": 2015, "year_label": "2015/16", "field": "Business & Management", "count": 10249, "pct": 16.8, "total": 61007}, {"year": 2015, "year_label": "2015/16", "field": "Education", "count": 1891, "pct": 3.1, "total": 61007}, {"year": 2015, "year_label": "2015/16", "field": "Humanities & Social Sciences", "count": 10005, "pct": 16.400000000000002, "total": 61007}, {"year": 2015, "year_label": "2015/16", "field": "Other", "count": 11957, "pct": 19.6, "total": 61007}, {"year": 2015, "year_label": "2015/16", "field": "STEM", "count": 19034, "pct": 31.2, "total": 61007}, {"year": 2016, "year_label": "2016/17", "field": "Arts & Design", "count": 7098, "pct": 12.1, "total": 58663}, {"year": 2016, "year_label": "2016/17", "field": "Business & Management", "count": 9034, "pct": 15.4, "total": 58663}, {"year": 2016, "year_label": "2016/17", "field": "Education", "count": 1701, "pct": 2.9, "total": 58663}, {"year": 2016, "year_label": "2016/17", "field": "Humanities & Social Sciences", "count": 9855, "pct": 16.8, "total": 58663}, {"year": 2016, "year_label": "2016/17", "field": "Other", "count": 11557, "pct": 19.7, "total": 58663}, {"year": 2016, "year_label": "2016/17", "field": "STEM", "count": 19417, "pct": 33.1, "total": 58663}, {"year": 2017, "year_label": "2017/18", "field": "Arts & Design", "count": 6547, "pct": 12.0, "total": 54555}, {"year": 2017, "year_label": "2017/18", "field": "Business & Management", "count": 8238, "pct": 15.1, "total": 54555}, {"year": 2017, "year_label": "2017/18", "field": "Education", "count": 1582, "pct": 2.9, "total": 54555}, {"year": 2017, "year_label": "2017/18", "field": "Humanities & Social Sciences", "count": 7583, "pct": 13.9, "total": 54555}, {"year": 2017, "year_label": "2017/18", "field": "Other", "count": 11511, "pct": 21.1, "total": 54555}, {"year": 2017, "year_label": "2017/18", "field": "STEM", "count": 19149, "pct": 35.1, "total": 54555}, {"year": 2018, "year_label": "2018/19", "field": "Arts & Design", "count": 6584, "pct": 12.6, "total": 52250}, {"year": 2018, "year_label": "2018/19", "field": "Business & Management", "count": 7315, "pct": 14.0, "total": 52250}, {"year": 2018, "year_label": "2018/19", "field": "Education", "count": 1359, "pct": 2.6, "total": 52250}, {"year": 2018, "year_label": "2018/19", "field": "Humanities & Social Sciences", "count": 7733, "pct": 14.8, "total": 52250}, {"year": 2018, "year_label": "2018/19", "field": "Other", "count": 9875, "pct": 18.9, "total": 52250}, {"year": 2018, "year_label": "2018/19", "field": "STEM", "count": 19385, "pct": 37.1, "total": 52250}, {"year": 2019, "year_label": "2019/20", "field": "Arts & Design", "count": 5877, "pct": 11.8, "total": 49809}, {"year": 2019, "year_label": "2019/20", "field": "Business & Management", "count": 6475, "pct": 13.0, "total": 49809}, {"year": 2019, "year_label": "2019/20", "field": "Education", "count": 1146, "pct": 2.3, "total": 49809}, {"year": 2019, "year_label": "2019/20", "field": "Humanities & Social Sciences", "count": 7023, "pct": 14.1, "total": 49809}, {"year": 2019, "year_label": "2019/20", "field": "Other", "count": 9464, "pct": 19.0, "total": 49809}, {"year": 2019, "year_label": "2019/20", "field": "STEM", "count": 19874, "pct": 39.9, "total": 49809}, {"year": 2020, "year_label": "2020/21", "field": "Arts & Design", "count": 4147, "pct": 10.5, "total": 39491}, {"year": 2020, "year_label": "2020/21", "field": "Business & Management", "count": 4936, "pct": 12.5, "total": 39491}, {"year": 2020, "year_label": "2020/21", "field": "Education", "count": 1066, "pct": 2.7, "total": 39491}, {"year": 2020, "year_label": "2020/21", "field": "Humanities & Social Sciences", "count": 5884, "pct": 14.9, "total": 39491}, {"year": 2020, "year_label": "2020/21", "field": "Other", "count": 6477, "pct": 16.4, "total": 39491}, {"year": 2020, "year_label": "2020/21", "field": "STEM", "count": 16981, "pct": 43.0, "total": 39491}, {"year": 2021, "year_label": "2021/22", "field": "Arts & Design", "count": 4279, "pct": 10.5, "total": 40755}, {"year": 2021, "year_label": "2021/22", "field": "Business & Management", "count": 4809, "pct": 11.8, "total": 40755}, {"year": 2021, "year_label": "2021/22", "field": "Education", "count": 1019, "pct": 2.5, "total": 40755}, {"year": 2021, "year_label": "2021/22", "field": "Humanities & Social Sciences", "count": 5909, "pct": 14.5, "total": 40755}, {"year": 2021, "year_label": "2021/22", "field": "Other", "count": 7010, "pct": 17.2, "total": 40755}, {"year": 2021, "year_label": "2021/22", "field": "STEM", "count": 17688, "pct": 43.4, "total": 40755}, {"year": 2022, "year_label": "2022/23", "field": "Arts & Design", "count": 4429, "pct": 10.1, "total": 43847}, {"year": 2022, "year_label": "2022/23", "field": "Business & Management", "count": 5262, "pct": 12.0, "total": 43847}, {"year": 2022, "year_label": "2022/23", "field": "Education", "count": 965, "pct": 2.2, "total": 43847}, {"year": 2022, "year_label": "2022/23", "field": "Humanities & Social Sciences", "count": 6007, "pct": 13.7, "total": 43847}, {"year": 2022, "year_label": "2022/23", "field": "Other", "count": 8068, "pct": 18.4, "total": 43847}, {"year": 2022, "year_label": "2022/23", "field": "STEM", "count": 19073, "pct": 43.5, "total": 43847}, {"year": 2023, "year_label": "2023/24", "field": "Arts & Design", "count": 4315, "pct": 10.0, "total": 43149}, {"year": 2023, "year_label": "2023/24", "field": "Business & Management", "count": 5092, "pct": 11.8, "total": 43149}, {"year": 2023, "year_label": "2023/24", "field": "Education", "count": 863, "pct": 2.0, "total": 43149}, {"year": 2023, "year_label": "2023/24", "field": "Humanities & Social Sciences", "count": 6127, "pct": 14.2, "total": 43149}, {"year": 2023, "year_label": "2023/24", "field": "Other", "count": 7724, "pct": 17.9, "total": 43149}, {"year": 2023, "year_label": "2023/24", "field": "STEM", "count": 19072, "pct": 44.2, "total": 43149}, {"year": 2024, "year_label": "2024/25", "field": "Arts & Design", "count": 3976, "pct": 9.4, "total": 42293}, {"year": 2024, "year_label": "2024/25", "field": "Business & Management", "count": 5033, "pct": 11.9, "total": 42293}, {"year": 2024, "year_label": "2024/25", "field": "Education", "count": 888, "pct": 2.1, "total": 42293}, {"year": 2024, "year_label": "2024/25", "field": "Humanities & Social Sciences", "count": 5836, "pct": 13.8, "total": 42293}, {"year": 2024, "year_label": "2024/25", "field": "Other", "count": 7740, "pct": 18.3, "total": 42293}, {"year": 2024, "year_label": "2024/25", "field": "STEM", "count": 18820, "pct": 44.5, "total": 42293}];
+const FIELD_COLS  = ["Arts & Design", "Business & Management", "Education", "Humanities & Social Sciences", "Other", "STEM"];
+const FIELD_COLORS= {"Arts & Design": "#E74C3C", "Business & Management": "#1A3A5C", "Education": "#27AE60", "Humanities & Social Sciences": "#F39C12", "Other": "#95A5A6", "STEM": "#2980B9"};
+const DONUT_VALS  = [3976, 5033, 888, 5836, 7740, 18820];
+const DONUT_LABELS= ["Arts & Design", "Business & Management", "Education", "Humanities & Social Sciences", "Other", "STEM"];
+const DONUT_COLORS= ["#E74C3C", "#1A3A5C", "#27AE60", "#F39C12", "#95A5A6", "#2980B9"];
+const LATEST_YEAR = 2024;
+
+let selectedField = null;
+
+// ── Group data by field ───────────────────────────────────────────────────
+const byField = {};
+FIELD_COLS.forEach(f => {
+  byField[f] = ALL_DATA.filter(d => d.field === f).sort((a,b) => a.year - b.year);
+});
+
+// ── Donut chart ───────────────────────────────────────────────────────────
+const donutDiv = document.getElementById('donut');
+const donutTrace = {
+  type: 'pie',
+  values: DONUT_VALS,
+  labels: DONUT_LABELS,
+  marker: { colors: DONUT_COLORS, line: { color: 'white', width: 2 } },
+  hole: 0.52,
+  textinfo: 'percent',
+  textfont: { size: 11 },
+  hovertemplate: '<b>%{label}</b><br>%{value:,} students<br>%{percent}<extra></extra>',
+  pull: DONUT_LABELS.map(() => 0),
+  sort: false,
+};
+const donutLayout = {
+  margin: { l: 10, r: 10, t: 10, b: 0 },
+  height: 240,
+  showlegend: false,
+  paper_bgcolor: 'white',
+  annotations: [{
+    text: `<b>${LATEST_YEAR}<br>Total</b>`,
+    showarrow: false,
+    font: { size: 11, color: '#1A3A5C' },
+  }],
+};
+Plotly.newPlot(donutDiv, [donutTrace], donutLayout, {
+  displayModeBar: false, responsive: true,
+});
+
+// click on donut
+donutDiv.on('plotly_click', (evt) => {
+  const field = evt.points[0].label;
+  selectField(field);
+});
+
+// ── Legend ────────────────────────────────────────────────────────────────
+const legendDiv = document.getElementById('legend');
+FIELD_COLS.forEach(f => {
+  const row = document.createElement('div');
+  row.className = 'leg-row';
+  row.id = 'leg-' + f.replace(/[^a-z]/gi, '_');
+  row.innerHTML = `<span class="leg-swatch" style="background:${FIELD_COLORS[f]}"></span>${f}`;
+  row.onclick = () => selectField(f);
+  legendDiv.appendChild(row);
+});
+
+// ── Line chart ────────────────────────────────────────────────────────────
+const lineDiv = document.getElementById('linechart');
+const lineLayout = {
+  margin: { l: 55, r: 20, t: 20, b: 50 },
+  height: 310,
+  paper_bgcolor: 'white',
+  plot_bgcolor: '#FAFAFA',
+  xaxis: {
+    title: 'Academic Year',
+    showgrid: true, gridcolor: '#ECF0F1',
+    tickvals: byField[FIELD_COLS[0]].map(d => d.year),
+    ticktext: byField[FIELD_COLS[0]].map(d => d.year_label),
+    tickangle: -35,
+    tickfont: { size: 10 },
+  },
+  yaxis: {
+    title: 'Estimated Students',
+    showgrid: true, gridcolor: '#ECF0F1',
+    tickformat: ',d',
+  },
+  shapes: [{
+    type: 'line', x0: 2016, x1: 2016, y0: 0, y1: 1,
+    xref: 'x', yref: 'paper',
+    line: { color: '#C0392B', dash: 'dot', width: 1.5 },
+  }],
+  annotations: [{
+    x: 2016, y: 0.97, xref: 'x', yref: 'paper',
+    text: 'STEM OPT expanded', showarrow: false,
+    font: { size: 9.5, color: '#C0392B' }, xanchor: 'left',
+  }],
+  showlegend: false,
+};
+Plotly.newPlot(lineDiv, [], lineLayout, {
+  displayModeBar: false, responsive: true,
+});
+
+// ── selectField ───────────────────────────────────────────────────────────
+function selectField(field) {
+  selectedField = field;
+
+  // Update donut pull
+  const pullArr = DONUT_LABELS.map(l => l === field ? 0.08 : 0);
+  Plotly.restyle(donutDiv, { pull: [pullArr] });
+
+  // Update legend highlight
+  document.querySelectorAll('.leg-row').forEach(el => el.classList.remove('active'));
+  const legId = 'leg-' + field.replace(/[^a-z]/gi, '_');
+  const legEl = document.getElementById(legId);
+  if (legEl) legEl.classList.add('active');
+
+  // Update line chart
+  const data = byField[field] || [];
+  document.getElementById('line-title').textContent =
+    `Korean Students — ${field} (2009–${LATEST_YEAR})`;
+
+  const lineTrace = {
+    type: 'scatter',
+    mode: 'lines+markers',
+    x: data.map(d => d.year),
+    y: data.map(d => d.count),
+    line: { color: FIELD_COLORS[field], width: 2.5, shape: 'spline' },
+    marker: { size: 7, color: FIELD_COLORS[field] },
+    hovertemplate: '<b>%{x}</b><br>~%{y:,} students (%{customdata:.1f}%)<extra></extra>',
+    customdata: data.map(d => d.pct),
+  };
+
+  Plotly.react(lineDiv, [lineTrace], lineLayout, {
+    displayModeBar: false, responsive: true,
+  });
+}
+
+// Init with first field
+selectField(FIELD_COLS[0]);
+</script>
+</body>
+</html>

@@ -2,7 +2,6 @@
 data/raw/
 # Uncomment the line below to track raw data if all files are small (<20MB total)
 # !data/raw/
-
 # Keep processed data if small enough
 # data/processed/
 

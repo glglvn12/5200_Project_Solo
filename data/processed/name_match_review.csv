@@ -1,0 +1,46 @@
+iie_name,ipeds_match,score,unitid,state,control,carnegie,latitude,longitude,tuition_oos
+Indiana University Bloomington,Dominican University,72.0,151351,IN,Public,15,41.902678,-87.823003,37040.0
+Purdue University West Lafayette,Purdue University Fort Wayne,73.33333333333334,243780,IN,Public,15,41.117278,-85.108962,28794.0
+Texas A&M University College Station,Georgia College & State University,74.28571428571429,228723,TX,Public,15,33.082787,-83.231962,38360.0
+Pennsylvania State University University Park,Pennsylvania State University-Penn State Berks,74.72527472527473,214777,PA,Public,15,40.358839,-75.97329,42000.0
+University of Maryland College Park,University of Maryland-College Park,77.14285714285715,163286,MD,Public,15,38.988178,-76.944721,40806.0
+Arizona State University Tempe,Arkansas State University System,77.41935483870968,104151,AZ,Public,15,34.74582,-92.28758,32100.0
+CUNY Baruch College,CUNY Bernard M Baruch College,79.16666666666666,190512,NY,Public,18,40.740238,-73.983417,18600.0
+University of Wisconsin Madison,University of Wisconsin-Eau Claire,80.0,240444,WI,Public,15,44.798284,-91.501906,38730.0
+University of California Berkeley,University of California-Los Angeles,81.15942028985508,110635,CA,Public,15,34.07178,-118.442179,44066.0
+Columbia University,Carolina University,84.21052631578947,190150,NY,Private nonprofit,15,36.087962,-80.250153,65524.0
+Northeastern University Boston,Northeastern University,86.79245283018868,167358,MA,Private nonprofit,15,42.339992,-71.088782,60192.0
+University of Michigan Ann Arbor,University of Michigan-Ann Arbor,87.5,170976,MI,Public,15,42.278374,-83.73481,52266.0
+Rutgers University New Brunswick,Rutgers University-New Brunswick,87.5,186380,NJ,Public,15,40.498769,-74.446251,32000.0
+Houston Community College System,Houston Community College,87.71929824561404,225423,TX,Public,40,29.742114,-95.377319,6000.0
+University of Texas Dallas,The University of Texas at Dallas,88.13559322033898,228787,TX,Public,15,32.984673,-96.749702,30400.0
+University of Texas Austin,The University of Texas at Austin,88.13559322033898,228778,TX,Public,15,30.282825,-97.738273,40032.0
+University of California San Diego,University of California-San Diego,88.23529411764706,110680,CA,Public,15,32.877749,-117.235866,44009.0
+University of Texas Arlington,The University of Texas at Arlington,89.23076923076923,228769,TX,Public,15,32.729718,-97.11296,28228.0
+SUNY University at Buffalo,University at Buffalo,89.36170212765957,196088,NY,Public,15,43.000942,-78.789458,27000.0
+Georgia Institute of Technology,Florida Institute of Technology,90.32258064516128,139755,GA,Public,15,28.065773,-80.623123,33794.0
+University of Washington,University of Mary Washington,90.56603773584906,236948,WA,Public,15,38.302492,-77.476055,40740.0
+Ohio State University Columbus,Columbus State University,90.9090909090909,204796,OH,Public,15,32.50096,-84.94106,33502.0
+University of California Davis,University of California-Davis,96.66666666666667,110644,CA,Public,15,38.539667,-121.749567,44009.0
+University of California Irvine,University of California-Irvine,96.7741935483871,110653,CA,Public,15,33.648434,-117.841248,42692.0
+University of Minnesota Twin Cities,University of Minnesota-Twin Cities,97.14285714285714,174066,MN,Public,15,44.972851,-93.235464,33325.0
+University of California Los Angeles,University of California-Los Angeles,97.22222222222221,110662,CA,Public,15,34.07178,-118.442179,43473.0
+New York University,New York University,100.0,193900,NY,Private nonprofit,15,40.729452,-73.997264,58168.0
+Johns Hopkins University,Johns Hopkins University,100.0,162928,MD,Private nonprofit,15,39.328977,-76.621595,60480.0
+Carnegie Mellon University,Carnegie Mellon University,100.0,211440,PA,Private nonprofit,15,40.44357,-79.941993,60452.0
+Stanford University,Stanford University,100.0,243744,CA,Private nonprofit,15,37.429434,-122.167359,61731.0
+University of Florida,University of Florida,100.0,134130,FL,Public,15,29.64629,-82.347911,28658.0
+Wayne State University,Wayne State University,100.0,172644,MI,Public,15,42.358994,-83.068998,30000.0
+University of Houston,University of Houston,100.0,225511,TX,Public,15,29.720393,-95.343537,22906.0
+Cornell University,Cornell University,100.0,190415,NY,Private nonprofit,15,42.4472,-76.483084,63200.0
+Arizona State University Campus Immersion,Arizona State University Campus Immersion,100.0,104151,AZ,Public,15,33.417721,-111.934383,32100.0
+Montgomery College,Montgomery College,100.0,163426,MD,Public,40,39.098656,-77.15929,9000.0
+Harvard University,Harvard University,100.0,166027,MA,Private nonprofit,15,42.374471,-71.118313,56550.0
+University of Pennsylvania,University of Pennsylvania,100.0,215062,PA,Private nonprofit,15,39.950929,-75.19391,63452.0
+Florida International University,Florida International University,100.0,133951,FL,Public,15,25.75732,-80.373928,18956.0
+University of Illinois Urbana-Champaign,University of Illinois Urbana-Champaign,100.0,145637,IL,Public,15,40.104718,-88.229114,32000.0
+Northern Virginia Community College,Northern Virginia Community College,100.0,232946,VA,Public,40,38.833361,-77.236718,9000.0
+Boston University,Boston University,100.0,164988,MA,Private nonprofit,15,42.351118,-71.107942,60050.0
+University of Southern California,University of Southern California,100.0,123961,CA,Private nonprofit,15,34.021281,-118.284169,63468.0
+Michigan State University,Michigan State University,100.0,171100,MI,Public,15,42.73212,-84.476111,39766.0
+University of North Texas,University of North Texas,100.0,227216,TX,Public,16,33.211178,-97.148422,22000.0

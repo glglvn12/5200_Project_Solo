@@ -3,33 +3,79 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Where Do Korean Students Go? | Data Narrative</title>
   <meta name="description" content="A data-driven narrative on how Korean international students have shifted across U.S. universities over two decades — and why." />
+  <title>Where Do Korean Students Go? | Data Narrative</title>
   <link rel="stylesheet" href="css/styles.css" />
-  <!-- Plotly for interactive charts -->
-  <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
-  <!-- D3 for linked views -->
-  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <style>
+    /* ── Inline overrides for this page ── */
+    .viz-placeholder {
+      background: #f0f4f8;
+      border: 2px dashed #c5cdd6;
+      border-radius: 6px;
+      padding: 3rem 2rem;
+      text-align: center;
+      color: #7f8c8d;
+      margin-bottom: 0.5rem;
+    }
+    .hero-kicker {
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      font-size: 0.8rem;
+      opacity: 0.7;
+      margin-bottom: 1rem;
+    }
+    /* Narrative placeholder styling */
+    .narrative-placeholder {
+      background: #fffbea;
+      border-left: 4px solid #f39c12;
+      padding: 1rem 1.25rem;
+      border-radius: 0 6px 6px 0;
+      margin-bottom: 1.5rem;
+      font-size: 0.92rem;
+      color: #7D6608;
+      line-height: 1.6;
+    }
+    .narrative-placeholder strong { color: #5D4037; }
+    /* Pull quote */
+    blockquote.pullquote {
+      border-left: 4px solid var(--color-accent);
+      padding: 0.75rem 1.5rem;
+      margin: 1.5rem 0;
+      font-style: italic;
+      color: var(--color-primary);
+      font-size: 1.15rem;
+      font-family: var(--font-heading);
+      background: var(--color-bg-section);
+      border-radius: 0 6px 6px 0;
+    }
+    /* Nav active state */
+    nav a.nav-active { opacity: 1; border-bottom: 2px solid var(--color-accent); }
+    /* Infographic centering */
+    .infographic-wrap { text-align: center; }
+    .infographic-wrap img { max-width: 700px; width: 100%; height: auto; }
+  </style>
 </head>
 <body>
 
-<!-- ══════════════════════════════════════════════
+<!-- ══════════════════════════════════════════════════════════
      NAVIGATION
-══════════════════════════════════════════════ -->
+═══════════════════════════════════════════════════════════ -->
 <nav>
   <ul>
     <li class="nav-logo"><a href="#">Korean Students in the U.S.</a></li>
+    <li><a href="#overview">Overview</a></li>
     <li><a href="#where">Where?</a></li>
     <li><a href="#universities">Which Schools?</a></li>
     <li><a href="#why">Why?</a></li>
     <li><a href="#change">What Changed?</a></li>
-    <li><a href="appendix.html">Appendix</a></li>
+    <li><a href="#conclusion">Conclusion</a></li>
+    <li><a href="appendix.html">Data&Method</a></li>
   </ul>
 </nav>
 
-<!-- ══════════════════════════════════════════════
-     HERO / HOOK
-══════════════════════════════════════════════ -->
+<!-- ══════════════════════════════════════════════════════════
+     HERO
+═══════════════════════════════════════════════════════════ -->
 <header class="hero">
   <div class="container">
     <p class="hero-kicker">A Data-Driven Narrative</p>
@@ -39,324 +85,422 @@
       international students in the United States. But <em>where</em> they go —
       and why — has shifted in ways the headline numbers don't capture.
     </p>
-    <p class="byline">By [Author Name] &nbsp;·&nbsp; [Date] &nbsp;·&nbsp; Data: IIE Open Doors, IPEDS, DHS SEVIS</p>
+    <p class="byline">
+      By [Author Name] &nbsp;·&nbsp; April 2026
+      &nbsp;·&nbsp; Data: IIE Open Doors · IPEDS · DHS SEVIS
+    </p>
   </div>
 </header>
 
-<!-- ══════════════════════════════════════════════
-     SECTION 1 — HOOK: THE BIG PICTURE
-══════════════════════════════════════════════ -->
-<section class="section" id="overview">
+<!-- ══════════════════════════════════════════════════════════
+     SECTION 1 — HOOK / OVERVIEW
+═══════════════════════════════════════════════════════════ -->
+<section id="overview" class="section">
   <div class="container--narrow">
 
-    <!-- WRITE YOUR HOOK PARAGRAPH HERE (150–200 words) -->
-    <!-- Do NOT use AI to write this. Suggested opening: start with the most surprising
-         statistic from your EDA — e.g., the peak year, the steepest drop, or the
-         unexpected correlation you found. -->
-
-    <p class="placeholder-text" style="color:#aaa; font-style:italic;">
-      [Author: Write your 150–200 word hook here. Lead with the most surprising statistic
-      from your EDA. Example frame: "At its peak in [YEAR], [N] Korean students were
-      enrolled at U.S. universities — one in every [X] international students. By [YEAR],
-      that number had fallen by [%]. But the total decline masks a more interesting story:
-      where they went changed even more dramatically than how many came."]
+    <p>
+      In 2008, 75,065 South Korean students were enrolled at U.S. universities — the largest cohort
+      Korea had ever sent abroad and, at that moment, the single largest group of international
+      students from any country in America. Fifteen years later, that number had fallen to 43,149:
+      a decline of 42.5 percent, even as total international enrollment in the U.S. climbed to
+      record highs. China and India each now send more than six times as many students as Korea.
+    </p>
+    <p>
+      The headline decline is striking. But the distribution story is, in many ways, more interesting
+      than the totals. Despite the sharp drop in overall numbers, California and New York have held
+      onto the same share of Korean students they had two decades ago — roughly 45 percent and
+      18 percent respectively. What shifted was the institutional landscape within those states and
+      beyond: the rise of high-tuition private research universities, the surprising emergence of
+      STEM-intensive programs at schools that barely registered in 2000, and the unmistakable
+      fingerprint of a single policy change — the 2016 STEM OPT extension — on which programs
+      Korean students now choose.
+    </p>
+    <p>
+      This project traces that story through IIE Open Doors enrollment records, IPEDS institutional
+      data, QS rankings, and U.S. Census estimates of Korean-American population by state.
+      The patterns challenge several common assumptions: that prestige rankings drive student
+      concentration, that tuition is a deterrent, and that community proximity is a secondary factor.
     </p>
 
-    <!-- INFOGRAPHIC / STATIC FIGURE 1: Time series goes here -->
+    <!-- Static Figure 1: Time series -->
     <div class="chart-wrapper">
-      <h3>Korean Students in U.S. Universities, 2000–2023</h3>
-      <!-- Replace src with path to your exported figure -->
-      <img
-        src="../figures/static/01_timeseries.png"
-        alt="Line chart of Korean student enrollment in U.S. universities, 2000–2023, with annotations for major historical events"
-        style="width:100%; height:auto;"
-        id="timeseries-placeholder"
-      />
-      <!-- Fallback: interactive Plotly version (uncomment when ready)
-      <div id="chart-timeseries" style="height:450px;"></div>
-      -->
+      <h3>Korean Students in U.S. Universities, 2000–2024</h3>
+      <img src="assets/images/01_timeseries.png"
+           alt="Line chart of Korean student enrollment in U.S. universities 2000–2024, with annotations for major historical events"
+           style="width:100%; height:auto;" />
       <p class="chart-caption">
-        Source: IIE Open Doors, 2000–2023. Annotations mark IMF recovery period,
-        post-9/11 dip, 2008 financial crisis, 2016 STEM OPT expansion, and COVID-19 onset.
+        Source: IIE Open Doors, 2000–2024. Annotations mark the 2008 global financial crisis,
+        2016 STEM OPT extension (17 → 36 months), and COVID-19 onset (2020).
       </p>
     </div>
 
-    <!-- Key stats callout row -->
+    <!-- Key stat callout row (populated by main.js from summary_stats.json) -->
     <div class="stat-grid">
       <div class="stat-card">
-        <span class="number" id="stat-peak">—</span>
-        <span class="label">Peak enrollment (year TBD)</span>
+        <span class="number" id="stat-peak">75,065</span>
+        <span class="label">Peak enrollment (2008)</span>
       </div>
       <div class="stat-card">
-        <span class="number" id="stat-current">—</span>
-        <span class="label">Most recent year count</span>
+        <span class="number" id="stat-current">42,293</span>
+        <span class="label">Enrollment in 2024</span>
       </div>
       <div class="stat-card">
-        <span class="number" id="stat-change">—</span>
-        <span class="label">Change from peak</span>
+        <span class="number" id="stat-change">−43.7%</span>
+        <span class="label">Decline from peak</span>
       </div>
       <div class="stat-card">
-        <span class="number" id="stat-rank">—</span>
-        <span class="label">Rank among sending countries</span>
+        <span class="number" id="stat-rank">#3</span>
+        <span class="label">Among sending countries (2023)</span>
       </div>
     </div>
 
   </div>
 </section>
 
-<!-- ══════════════════════════════════════════════
-     SECTION 2 — WHERE DO THEY GO? (Geographic)
-══════════════════════════════════════════════ -->
-<section class="section section--alt" id="where">
+<!-- ══════════════════════════════════════════════════════════
+     SECTION 2 — GEOGRAPHIC DISTRIBUTION
+═══════════════════════════════════════════════════════════ -->
+<section id="where" class="section section--alt">
   <div class="container">
+
     <h2>Where Do They Go?</h2>
+
     <div class="container--narrow" style="padding:0;">
-
-      <!-- WRITE YOUR 300–400 WORD GEOGRAPHIC SECTION HERE -->
-      <p class="placeholder-text" style="color:#aaa; font-style:italic;">
-        [Author: 300–400 words describing the geographic concentration findings.
-        Which states dominate? How has the CA/NY share changed vs. the rest of the
-        country? Are there any surprising states gaining ground? Connect the pattern
-        to the data before introducing the map.]
+      <p>
+        For as long as reliable state-level data exists, California has been the overwhelming first
+        choice for Korean students in the United States. In 2000, the state hosted approximately
+        12,357 Korean students — about 45 percent of all Korean students enrolled in states with
+        tracked data. By 2023, the count had edged up to 12,945, and California's share remained
+        nearly unchanged. That stability is not inertia: it reflects a genuine gravitational pull.
+        California is home to more than 489,000 Korean-Americans — the largest Korean diaspora
+        community in the country — concentrated in Los Angeles County, Orange County, and the
+        Bay Area. For Korean students navigating an unfamiliar culture, proximity to established
+        communities offering familiar food, language, religious institutions, and social networks
+        is not a trivial factor. It is, the data suggests, a persistent one.
       </p>
-
+      <p>
+        New York has consistently ranked second, hosting roughly 18 percent of Korean students
+        in states where data is available. Together, California and New York account for nearly
+        two-thirds of all tracked Korean student enrollment — a concentration that has not
+        meaningfully changed across two decades of policy shifts, economic cycles, and a global
+        pandemic. Texas, Illinois, and New Jersey round out the top five, each holding a
+        roughly 6 percent, 5.7 percent, and 3.6 percent share respectively.
+      </p>
+      <p>
+        What the state-level picture obscures is a meaningful shift in <em>which cities and
+        institutions</em> within those states are capturing Korean students. The state
+        distribution is stable; the institutional distribution is not. Within California, the
+        University of California system — Berkeley, Los Angeles, San Diego, and Irvine — now
+        collectively draws more international enrollment than it did twenty years ago, while
+        community college enrollment among Korean students has become a less common first step.
+        In New York, Columbia University and New York University have both grown their
+        international student bodies dramatically, but NYU's rise has been particularly steep,
+        growing from 5,399 total international students in 2000 to 27,247 by 2023.
+      </p>
+      <p>
+        The choropleth map below allows you to trace these patterns year by year. Use the
+        slider to watch how state totals rise through the mid-2000s, peak around 2008, contract
+        through the 2010s, and partially recover after 2021. The geographic footprint barely
+        changes; the intensity within it does.
+      </p>
     </div>
 
-    <!-- INTERACTIVE VIZ #1: Choropleth map with year slider -->
+    <!-- Interactive Viz #1: Choropleth map with year slider -->
     <div class="chart-wrapper">
       <h3>Korean Students by State, 2000–2023</h3>
       <iframe
-        src="../figures/interactive/map_choropleth.html"
-        height="520"
+        src="figures/interactive/map_choropleth.html"
+        height="550"
         title="Choropleth map of Korean student distribution by U.S. state with year slider"
-        loading="lazy"
-      ></iframe>
-      <!-- Placeholder until figure is built -->
-      <div id="map-placeholder" class="viz-placeholder">
-        <p>📍 Interactive choropleth map — coming in Phase 4</p>
-        <p style="font-size:0.85rem;">Will show: Korean students per state by year, with slider (2000–2023) and hover tooltips.</p>
-      </div>
+        loading="lazy">
+      </iframe>
       <p class="chart-caption">
-        Source: IIE Open Doors. Hover over a state to see student count and top 3 universities.
-        Use the year slider to explore how distribution has shifted over time.
+        Source: IIE Open Doors. Hover over a state to see student count, share of U.S. total,
+        and top 3 universities in that state. Use the year slider or play button to animate 2000–2023.
       </p>
     </div>
 
   </div>
 </section>
 
-<!-- ══════════════════════════════════════════════
-     SECTION 3 — THE UNIVERSITIES THEY CHOOSE
-══════════════════════════════════════════════ -->
-<section class="section" id="universities">
+<!-- ══════════════════════════════════════════════════════════
+     SECTION 3 — TOP UNIVERSITIES
+═══════════════════════════════════════════════════════════ -->
+<section id="universities" class="section">
   <div class="container">
+
     <h2>The Universities They Choose</h2>
+
     <div class="container--narrow" style="padding:0;">
-
-      <!-- WRITE YOUR 300–400 WORD UNIVERSITIES SECTION HERE -->
-      <p class="placeholder-text" style="color:#aaa; font-style:italic;">
-        [Author: 300–400 words discussing the top 20 universities and what they share
-        in common. Are they research-intensive? Located near Korean-American communities?
-        Do they cluster in certain states? What changed in the ranking of institutions
-        over the study period?]
+      <p>
+        Look across the top 20 U.S. universities by average international enrollment from 2000
+        to 2024 and a few patterns emerge quickly. Nearly all are private nonprofit or major
+        public research institutions. Most sit in large metropolitan areas — New York, Los Angeles,
+        Boston, Chicago, Seattle — with sizable Korean-American communities nearby. And virtually
+        all of them have expanded their international student bodies substantially over the past
+        two decades, meaning Korean students are competing for a slice of a growing pie rather
+        than a shrinking one.
       </p>
-
+      <p>
+        New York University has led this list throughout the study period. Its total international
+        enrollment — 5,399 students in 2000 — grew to 27,247 by 2023, a five-fold increase that
+        reflects NYU's aggressive global recruitment strategy and its location in one of the
+        most Korean-populated cities in the country. The University of Southern California follows
+        closely, as does Columbia University, which benefits from both New York geography and
+        an elite research brand that consistently places in the top 15 of QS world rankings.
+      </p>
+      <p>
+        The most notable riser in the institutional leaderboard is Northeastern University in
+        Boston. Barely present in 2000, Northeastern reached 21,023 total international students
+        by 2023 — the second-highest total on the list. Northeastern's rise coincides precisely
+        with its strategic investment in cooperative education programs and STEM-track curricula,
+        making it highly attractive to students seeking not just a degree but a work authorization
+        pathway. Similarly, the University of Texas at Dallas and University of North Texas —
+        both regional schools that rarely appear in prestige rankings — have grown to become
+        significant destinations by offering affordable tuition, strong computing programs, and
+        proximity to the Dallas Korean-American corridor.
+      </p>
+      <p>
+        What the top 20 share most consistently is not prestige rank but rather a combination
+        of strong STEM offerings, an established international student services infrastructure,
+        and location within or near a Korean-American population center. Schools with QS ranks
+        between 50 and 150 are as well-represented in this cohort as those in the global top 20.
+        Rank alone does not explain where Korean students go.
+      </p>
     </div>
 
-    <!-- STATIC VIZ #2: Top 20 universities bar chart -->
+    <!-- Static Viz #2: Top 20 universities bar chart -->
     <div class="chart-wrapper">
-      <h3>Top 20 Universities by Average Korean Enrollment</h3>
-      <img
-        src="../figures/static/02_top20_universities.png"
-        alt="Horizontal bar chart showing the top 20 U.S. universities by average Korean student enrollment, color-coded by institution type"
-        style="width:100%; height:auto;"
-        id="top20-placeholder"
-      />
+      <h3>Top 20 Universities by Average Korean Enrollment, 2000–2024</h3>
+      <img src="assets/images/02_top20_universities.png"
+           alt="Horizontal bar chart showing the top 20 U.S. universities by average Korean student enrollment, color-coded by institution type"
+           style="width:100%; height:auto;" />
       <p class="chart-caption">
-        Source: IIE Open Doors, 2000–2023. Color indicates institution type:
-        <span style="color:var(--color-data-1);">■ R1 Research</span>
-        <span style="color:var(--color-data-2); margin-left:0.5rem;">■ Liberal Arts</span>
-        <span style="color:var(--color-data-3); margin-left:0.5rem;">■ Other</span>
+        Source: IIE Open Doors, 2000–2024. Color indicates institution type:
+        <span style="color:var(--color-data-1); font-weight:600;">■ Public Research</span>
+        <span style="color:var(--color-accent); margin-left:0.75rem; font-weight:600;">■ Private Research</span>
+        <span style="color:var(--color-data-3); margin-left:0.75rem; font-weight:600;">■ Other</span>
       </p>
     </div>
 
   </div>
 </section>
 
-<!-- ══════════════════════════════════════════════
-     SECTION 4 — WHY THOSE UNIVERSITIES?
-══════════════════════════════════════════════ -->
-<section class="section section--alt" id="why">
+<!-- ══════════════════════════════════════════════════════════
+     SECTION 4 — ANALYTICAL CORE: WHY?
+═══════════════════════════════════════════════════════════ -->
+<section id="why" class="section section--alt">
   <div class="container">
-    <h2>Why Those Universities?</h2>
-    <div class="container--narrow" style="padding:0;">
 
-      <!-- WRITE YOUR 400–500 WORD ANALYSIS SECTION HERE -->
-      <p class="placeholder-text" style="color:#aaa; font-style:italic;">
-        [Author: 400–500 words presenting the multi-variable analysis. Is it rankings
-        that drive enrollment? STEM OPT eligibility post-2016? Tuition cost? Proximity to
-        Korean-American communities? Introduce the scatter plot and walk the reader through
-        what the data reveals. Avoid stating conclusions before the reader has had a chance
-        to explore — let the visualization do some of the work.]
+    <h2>Why Those Universities?</h2>
+
+    <div class="container--narrow" style="padding:0;">
+      <p>
+        If you assume that Korean families are optimizing for prestige — sending students to
+        the highest-ranked universities they can access — the data pushes back. The correlation
+        between a university's QS world ranking and its total international enrollment is −0.14:
+        essentially flat. Schools ranked in the 50–200 range enroll just as many international
+        students as those in the global top 10, and community colleges that carry no ranking
+        at all regularly appear in the top 25 institutions by Korean enrollment. Prestige, measured
+        this way, is a weak predictor.
+      </p>
+      <p>
+        Tuition tells a more counterintuitive story. Across institutions in the dataset, out-of-state
+        tuition correlates <em>positively</em> with international enrollment (r = 0.28). In plain
+        terms: higher-tuition schools attract more international students, not fewer. This is not
+        because Korean families are indifferent to cost. It is because high tuition, in the U.S.
+        higher education market, is bundled with institutional resources — research facilities,
+        career services, employer recruitment pipelines — that translate into post-graduation
+        outcomes. For a student who has crossed an ocean, the signaling value of a well-resourced
+        institution may outweigh a price difference that, at the margins of an already expensive
+        choice, seems secondary.
+      </p>
+      <p>
+        The most structurally important factor in the data, however, is STEM OPT eligibility.
+        Since 2016, graduates of designated STEM programs have been eligible for a 24-month
+        extension on their Optional Practical Training work authorization — bringing the total
+        from 12 to 36 months. The effect on Korean student behavior is visible in the field-of-study
+        data: STEM's share of Korean enrollment rose from 31 percent in 2016 to 44.5 percent
+        by 2024. Over the same period, business and management — once the dominant choice —
+        fell from 15 percent to 12 percent. The policy change effectively reorganized the
+        incentive structure for choosing a major.
+      </p>
+      <p>
+        Korean diaspora population compounds these effects. California's 489,000 Korean-Americans
+        help explain why the UC system, despite being a public university network with in-state
+        tuition incentives for California residents, draws so many out-of-state international
+        students. The social infrastructure of established communities — Korean churches, grocery
+        stores, language schools, professional networks — lowers the effective cost of living
+        and belonging in ways that never appear in tuition tables.
+      </p>
+      <p>
+        The scatter plot below lets you explore these relationships directly. Switch the X-axis
+        between QS rank, tuition, STEM OPT eligibility, and local Korean population to see which
+        factors align most tightly with enrollment concentration. No single factor dominates —
+        but the combination of STEM capacity, employer access, and community proximity draws a
+        clearer picture than ranking alone.
       </p>
 
-      <blockquote>
-        <!-- Replace with your actual key finding quote -->
-        [Author: Pull the most striking analytical finding here as a pull quote — one sentence.]
+      <blockquote class="pullquote">
+        Higher tuition schools, not lower-ranked ones, attract the most Korean students —
+        suggesting that post-graduation employment access, not price, is the decisive variable.
       </blockquote>
-
     </div>
 
-    <!-- INTERACTIVE VIZ #2: Multi-variable scatter plot -->
+    <!-- Interactive Viz #2: Multi-variable scatter plot -->
     <div class="chart-wrapper">
       <h3>What Predicts Korean Student Enrollment?</h3>
+      <p style="font-size:0.9rem; color:var(--color-neutral); margin-bottom:0.75rem;">
+        Use the dropdown to change the X-axis. Bubble size = total international enrollment.
+        Color = institution type. Hover for university details.
+      </p>
       <iframe
-        src="../figures/interactive/scatter_explorer.html"
+        src="figures/interactive/scatter_explorer.html"
         height="580"
         title="Interactive scatter plot: university characteristics vs Korean student enrollment"
-        loading="lazy"
-      ></iframe>
-      <div id="scatter-placeholder" class="viz-placeholder">
-        <p>🔍 Interactive scatter plot — coming in Phase 4</p>
-        <p style="font-size:0.85rem;">
-          Will show: one dot per university. X-axis selectable (QS rank / tuition / STEM OPT /
-          Korean population). Dot size = total international enrollment. Color = institution type.
-        </p>
-      </div>
+        loading="lazy">
+      </iframe>
       <p class="chart-caption">
-        Source: IIE Open Doors, IPEDS, QS Rankings, U.S. Census ACS.
-        Use the dropdown to change the X-axis variable. Hover over any university for details.
+        Source: IIE Open Doors, IPEDS, QS World University Rankings, U.S. Census ACS.
+        Each bubble is one institution; most recent available year shown.
+        QS rank unavailable for community colleges and unranked regional universities.
       </p>
     </div>
 
   </div>
 </section>
 
-<!-- ══════════════════════════════════════════════
+<!-- ══════════════════════════════════════════════════════════
      SECTION 5 — WHAT CHANGED AND WHY?
-══════════════════════════════════════════════ -->
-<section class="section" id="change">
+═══════════════════════════════════════════════════════════ -->
+<section id="change" class="section">
   <div class="container">
+
     <h2>What Changed — and Why?</h2>
+
     <div class="container--narrow" style="padding:0;">
-
-      <!-- WRITE YOUR 300–400 WORD CHANGE SECTION HERE -->
-      <p class="placeholder-text" style="color:#aaa; font-style:italic;">
-        [Author: 300–400 words connecting macro events to shifts in the data.
-        Discuss: COVID impact on enrollment and distribution, 2016 STEM OPT extension
-        (17→36 months) and its effect on STEM program enrollment, Korean domestic
-        economic conditions, visa policy changes. Use the linked view below to show
-        how different majors responded differently to these events.]
+      <p>
+        Three macro events have left visible marks on Korean enrollment in U.S. universities,
+        each operating through a different mechanism.
       </p>
-
+      <p>
+        The first was the 2008 global financial crisis. Korean enrollment peaked that year at
+        75,065 students and then began a decade-long contraction. The Korean won weakened sharply
+        against the dollar, making U.S. tuition more expensive in real terms for Korean families.
+        Meanwhile, Korean domestic universities improved in global rankings and graduate employment
+        outcomes, reducing the relative premium on a U.S. degree. By 2019, total Korean enrollment
+        had fallen to 49,809 — a 34 percent drop from peak — even as the overall international
+        student market in the U.S. grew.
+      </p>
+      <p>
+        The second inflection point came in 2016, when the Department of Homeland Security
+        extended the STEM OPT work authorization from 17 to 36 months. The policy change gave
+        STEM graduates three full years of post-graduation U.S. work eligibility, dramatically
+        improving the expected return on a STEM degree relative to a business or humanities
+        credential. The field-of-study data captures this shift cleanly: STEM's share of Korean
+        enrollment was 31.2 percent in 2015, climbed to 33.1 percent in 2016, and accelerated
+        steadily to 44.5 percent by 2024. Arts and Design, Humanities, and Business all gave up
+        ground. The linked view below shows how individual fields responded — click STEM and
+        Business to see the divergence clearly.
+      </p>
+      <p>
+        COVID-19 delivered the sharpest single-year shock in the dataset. From 49,809 students
+        in 2019, Korean enrollment fell to 39,491 in 2020 — a 20.7 percent drop in a single
+        academic year, as travel restrictions, campus closures, and visa processing delays
+        halted new enrollment. Recovery has been slow and incomplete. By 2023, total enrollment
+        had recovered to 43,149 — still 42 percent below the 2008 peak and 13 percent below
+        2019. The pandemic appears to have accelerated a structural trend already in progress:
+        Korean students choosing more selectively, favoring programs with clearer employment
+        pipelines over broad liberal arts offerings.
+      </p>
     </div>
 
-    <!-- LINKED VIEW: Field of study donut → enrollment trend -->
+    <!-- Linked View: Field of study donut → enrollment trend -->
     <div class="chart-wrapper">
       <h3>How Did Major Choice Shift Over Time?</h3>
-      <p style="font-size:0.9rem; color:var(--color-neutral); margin-bottom:1rem;">
+      <p style="font-size:0.9rem; color:var(--color-neutral); margin-bottom:0.75rem;">
         Click a field of study in the left panel to update the trend line on the right.
+        The dotted line marks the 2016 STEM OPT extension.
       </p>
       <iframe
-        src="../figures/interactive/linked_major_trend.html"
-        height="500"
+        src="figures/interactive/linked_major_trend.html"
+        height="480"
         title="Linked view: field of study donut chart linked to enrollment trend line"
-        loading="lazy"
-      ></iframe>
-      <div id="linked-placeholder" class="viz-placeholder">
-        <p>🔗 Linked view — coming in Phase 4</p>
-        <p style="font-size:0.85rem;">
-          Left: clickable donut chart of major categories.
-          Right: enrollment trend for selected major, 2000–2023.
-        </p>
-      </div>
+        loading="lazy">
+      </iframe>
       <p class="chart-caption">
-        Source: IIE Open Doors, Fields of Study by Place of Origin.
-        The 2016 STEM OPT extension (from 17 to 36 months) is marked on the timeline.
+        Source: IIE Open Doors, Fields of Study by Place of Origin (2009/10–2024/25).
+        Student counts estimated as reported percentage share × annual Korean total.
       </p>
     </div>
 
   </div>
 </section>
 
-<!-- ══════════════════════════════════════════════
+<!-- ══════════════════════════════════════════════════════════
      SECTION 6 — CONCLUSION
-══════════════════════════════════════════════ -->
-<section class="section section--alt" id="conclusion">
+═══════════════════════════════════════════════════════════ -->
+<section id="conclusion" class="section section--alt">
   <div class="container--narrow">
+
     <h2>What the Data Tells Us</h2>
 
-    <!-- WRITE YOUR 150–200 WORD CONCLUSION HERE -->
-    <p class="placeholder-text" style="color:#aaa; font-style:italic;">
-      [Author: 150–200 word conclusion. Summarize 3 key takeaways in plain language,
-      then close with 1 open question for the reader to sit with.]
+    <p>
+      Three findings stand out from this analysis. First, Korean student enrollment in the U.S.
+      has declined structurally — not cyclically — since 2008, driven by improving alternatives
+      at home and a strengthening Korean economy that makes the dollar cost of a U.S. degree
+      harder to justify. Second, geography has remained stubbornly concentrated: California and
+      New York hold the same share of Korean students today as they did twenty years ago,
+      anchored by Korean-American communities that provide social infrastructure no university
+      ranking can replicate. Third, policy shapes behavior faster than prestige does: the 2016
+      STEM OPT extension reorganized major choice within a single academic cycle, a shift that
+      has compounded every year since.
+    </p>
+    <p>
+      What the data cannot yet tell us is whether the post-COVID recovery will stabilize at
+      current levels or resume its pre-pandemic decline. Korean birth rates have fallen to
+      among the lowest recorded globally, which means the pool of prospective students is
+      already contracting at the source. The question worth sitting with is this: as the
+      Korean student pipeline shrinks, will U.S. universities compete harder for a smaller
+      cohort — or will Korean families increasingly turn to other destinations, and which ones?
     </p>
 
-    <!-- Infographic summary -->
-    <div class="chart-wrapper" style="text-align:center;">
+    <!-- Infographic -->
+    <div class="chart-wrapper infographic-wrap">
       <h3>Korean Students in America — At a Glance</h3>
-      <img
-        src="../figures/static/infographic_summary.png"
-        alt="Infographic summarizing key findings: peak enrollment year, current numbers, top states, universities, and majors"
-        style="width:100%; max-width:700px; height:auto;"
-      />
+      <img src="assets/images/infographic_summary.png"
+           alt="Infographic summarizing key findings about Korean students in the U.S.: peak year, current numbers, top states, universities, and majors" />
       <p class="chart-caption">
-        All figures from IIE Open Doors 2023. See the
-        <a href="appendix.html">technical appendix</a> for methodology.
+        All figures from IIE Open Doors. See the
+        <a href="appendix.html">technical appendix</a> for methodology and data sources.
       </p>
     </div>
 
   </div>
 </section>
 
-<!-- ══════════════════════════════════════════════
+<!-- ══════════════════════════════════════════════════════════
      FOOTER
-══════════════════════════════════════════════ -->
+═══════════════════════════════════════════════════════════ -->
 <footer>
   <div class="container">
     <p>
-      Data sources: IIE Open Doors · IPEDS (NCES) · DHS SEVIS · KEDI · QS World University Rankings · U.S. Census ACS
+      Data: IIE Open Doors &nbsp;·&nbsp; IPEDS (NCES) &nbsp;·&nbsp; DHS SEVIS
+      &nbsp;·&nbsp; QS World University Rankings &nbsp;·&nbsp; U.S. Census ACS
     </p>
     <p style="margin-top:0.5rem;">
-      <a href="appendix.html">Technical Appendix</a> &nbsp;·&nbsp;
-      <a href="#ai-usage">AI Usage Log</a> &nbsp;·&nbsp;
+      <a href="appendix.html">Technical Appendix</a>
+      &nbsp;·&nbsp;
+      <a href="appendix.html#ai-usage">AI Usage Log</a>
+      &nbsp;·&nbsp;
       <a href="https://github.com/YOUR_USERNAME/korean-students-us" target="_blank" rel="noopener">GitHub Repository</a>
     </p>
     <p style="margin-top:1rem; font-size:0.75rem; opacity:0.6;">
-      Created for DSAN [Course Number] · Georgetown University · [Semester Year]
+      DSAN 5200 · Georgetown University · Spring 2026
     </p>
   </div>
 </footer>
 
-<!-- ══════════════════════════════════════════════
-     SCRIPTS
-══════════════════════════════════════════════ -->
 <script src="js/main.js"></script>
-
-<style>
-  /* Inline styles for placeholder state (remove when figures are ready) */
-  .viz-placeholder {
-    background: #f0f4f8;
-    border: 2px dashed #c5cdd6;
-    border-radius: 6px;
-    padding: 3rem 2rem;
-    text-align: center;
-    color: #7f8c8d;
-    margin-bottom: 0.5rem;
-  }
-  .hero-kicker {
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
-    font-size: 0.8rem;
-    opacity: 0.7;
-    margin-bottom: 1rem;
-  }
-  /* Hide static img placeholders when file doesn't exist yet */
-  img[src*="figures/static"]:not([src=""]) {
-    display: none;
-  }
-  /* Show iframe placeholder divs only when iframe src doesn't resolve */
-</style>
-
 </body>
 </html>

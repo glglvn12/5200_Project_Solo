@@ -1,0 +1,626 @@
+year_label,year,rank,institution_name,city,state,intl_students_total
+2000/01,2000,1,New York University,New York,NY,5399
+2000/01,2000,2,University of Southern California,Los Angeles,CA,5321
+2000/01,2000,3,Columbia University,New York,NY,4837
+2000/01,2000,4,Purdue University - West Lafayette,West Lafayette,IN,4469
+2000/01,2000,5,Boston University,Boston,MA,4443
+2000/01,2000,6,University of Texas - Austin,Austin,TX,4320
+2000/01,2000,7,Ohio State University - Columbus,Columbus,OH,4035
+2000/01,2000,8,University of Michigan - Ann Arbor,Ann Arbor,MI,4004
+2000/01,2000,9,University of Wisconsin - Madison,Madison,WI,3938
+2000/01,2000,10,Northern Virginia Community College,Annandale,VA,3877
+2000/01,2000,11,University of Illinois - Urbana-Champaign,Champaign,IL,3798
+2000/01,2000,12,Florida International University,Miami,FL,3603
+2000/01,2000,13,Texas A&M University - College Station,College Station,TX,3587
+2000/01,2000,14,University of Pennsylvania,Philadelphia,PA,3487
+2000/01,2000,15,University of Maryland - College Park,College Park,MD,3480
+2000/01,2000,16,Harvard University,Cambridge,MA,3377
+2000/01,2000,17,University of Minnesota - Twin Cities,Minneapolis,MN,3356
+2000/01,2000,18,Pennsylvania State University - University Park,University Park,PA,3288
+2000/01,2000,19,Indiana University - Bloomington,Bloomington,IN,3284
+2000/01,2000,20,Montgomery College,Rockville,MD,3264
+2000/01,2000,21,Houston Community College System,Houston,TX,3201
+2000/01,2000,22,CUNY Baruch College,New York,NY,3135
+2000/01,2000,23,University of Florida,Gainesville,FL,3039
+2000/01,2000,24,Cornell University,Ithaca,NY,3024
+2000/01,2000,25,University of Houston,Houston,TX,3010
+2001/02,2001,1,University of Southern California,Los Angeles,CA,5950
+2001/02,2001,2,New York University,New York,NY,5504
+2001/02,2001,3,Columbia University,New York,NY,5116
+2001/02,2001,4,Purdue University - West Lafayette,West Lafayette,IN,4695
+2001/02,2001,5,University of Texas - Austin,Austin,TX,4673
+2001/02,2001,6,Boston University,Boston,MA,4412
+2001/02,2001,7,Ohio State University - Columbus,Columbus,OH,4302
+2001/02,2001,8,University of Illinois - Urbana-Champaign,Champaign,IL,4287
+2001/02,2001,9,University of Michigan - Ann Arbor,Ann Arbor,MI,4149
+2001/02,2001,10,University of Florida,Gainesville,FL,3884
+2001/02,2001,11,University of Pennsylvania,Philadelphia,PA,3820
+2001/02,2001,12,University of Wisconsin - Madison,Madison,WI,3744
+2001/02,2001,13,Florida International University,Miami,FL,3723
+2001/02,2001,14,University of Maryland - College Park,College Park,MD,3711
+2001/02,2001,15,Texas A&M University - College Station,College Station,TX,3563
+2001/02,2001,16,Pennsylvania State University - University Park,University Park,PA,3484
+2001/02,2001,17,Houston Community College System,Houston,TX,3484
+2001/02,2001,18,Harvard University,Cambridge,MA,3448
+2001/02,2001,19,University of Houston,Houston,TX,3380
+2001/02,2001,20,University of Minnesota - Twin Cities,Minneapolis,MN,3356
+2001/02,2001,21,Arizona State University - Tempe,Tempe,AZ,3348
+2001/02,2001,22,Indiana University - Bloomington,Bloomington,IN,3325
+2001/02,2001,23,SUNY University at Buffalo,Buffalo,NY,3237
+2001/02,2001,24,Wayne State University,Detroit,MI,3233
+2001/02,2001,25,Montgomery College,Rockville,MD,3217
+2002/03,2002,1,University of Southern California,Los Angeles,CA,6270
+2002/03,2002,2,New York University,New York,NY,5454
+2002/03,2002,3,Columbia University,New York,NY,5148
+2002/03,2002,4,Purdue University - West Lafayette,West Lafayette,IN,5015
+2002/03,2002,5,University of Texas - Austin,Austin,TX,4926
+2002/03,2002,6,University of Michigan - Ann Arbor,Ann Arbor,MI,4601
+2002/03,2002,7,University of Illinois - Urbana-Champaign,Champaign,IL,4555
+2002/03,2002,8,Boston University,Boston,MA,4518
+2002/03,2002,9,University of Wisconsin - Madison,Madison,WI,4396
+2002/03,2002,10,Ohio State University - Columbus,Columbus,OH,4334
+2002/03,2002,11,University of California - Los Angeles,Los Angeles,CA,3927
+2002/03,2002,12,University of Pennsylvania,Philadelphia,PA,3856
+2002/03,2002,13,Florida International University,Miami,FL,3741
+2002/03,2002,14,University of Maryland - College Park,College Park,MD,3734
+2002/03,2002,15,Texas A&M University - College Station,College Station,TX,3702
+2002/03,2002,16,Pennsylvania State University - University Park,University Park,PA,3681
+2002/03,2002,17,SUNY University at Buffalo,Buffalo,NY,3628
+2002/03,2002,18,University of Florida,Gainesville,FL,3547
+2002/03,2002,19,Houston Community College System,Houston,TX,3507
+2002/03,2002,20,Indiana University - Bloomington,Bloomington,IN,3495
+2002/03,2002,21,Harvard University,Cambridge,MA,3459
+2002/03,2002,22,University of Houston,Houston,TX,3358
+2002/03,2002,23,University of Minnesota - Twin Cities,Minneapolis,MN,3351
+2002/03,2002,24,Arizona State University - Tempe,Tempe,AZ,3268
+2002/03,2002,25,Wayne State University,Detroit,MI,3224
+2003/04,2003,1,University of Southern California,Los Angeles,CA,6647
+2003/04,2003,2,Columbia University,New York,NY,5362
+2003/04,2003,3,Purdue University - West Lafayette,West Lafayette,IN,5094
+2003/04,2003,4,New York University,New York,NY,5070
+2003/04,2003,5,University of Texas - Austin,Austin,TX,4827
+2003/04,2003,6,University of Illinois - Urbana-Champaign,Champaign,IL,4769
+2003/04,2003,7,University of Michigan - Ann Arbor,Ann Arbor,MI,4583
+2003/04,2003,8,Boston University,Boston,MA,4518
+2003/04,2003,9,University of California - Los Angeles,Los Angeles,CA,4320
+2003/04,2003,10,Ohio State University - Columbus,Columbus,OH,4263
+2003/04,2003,11,Texas A&M University - College Station,College Station,TX,3815
+2003/04,2003,12,University of Maryland - College Park,College Park,MD,3726
+2003/04,2003,13,Indiana University - Bloomington,Bloomington,IN,3715
+2003/04,2003,14,Pennsylvania State University - University Park,University Park,PA,3693
+2003/04,2003,15,SUNY University at Buffalo,Buffalo,NY,3664
+2003/04,2003,16,University of Pennsylvania,Philadelphia,PA,3557
+2003/04,2003,17,University of Wisconsin - Madison,Madison,WI,3435
+2003/04,2003,18,Harvard University,Cambridge,MA,3403
+2003/04,2003,19,Florida International University,Miami,FL,3397
+2003/04,2003,20,University of Houston,Houston,TX,3368
+2003/04,2003,21,University of Minnesota - Twin Cities,Minneapolis,MN,3357
+2003/04,2003,22,Michigan State University,East Lansing,MI,3277
+2003/04,2003,23,Wayne State University,Detroit,MI,3271
+2003/04,2003,24,University of Florida,Gainesville,FL,3157
+2003/04,2003,25,Arizona State University - Tempe,Tempe,AZ,3038
+2004/05,2004,1,University of Southern California,Los Angeles,CA,6846
+2004/05,2004,2,University of Illinois - Urbana-Champaign,Champaign,IL,5560
+2004/05,2004,3,University of Texas - Austin,Austin,TX,5333
+2004/05,2004,4,Columbia University,New York,NY,5278
+2004/05,2004,5,New York University,New York,NY,5140
+2004/05,2004,6,Purdue University - West Lafayette,West Lafayette,IN,4921
+2004/05,2004,7,University of Michigan - Ann Arbor,Ann Arbor,MI,4632
+2004/05,2004,8,Boston University,Boston,MA,4541
+2004/05,2004,9,University of California - Los Angeles,Los Angeles,CA,4217
+2004/05,2004,10,Ohio State University - Columbus,Columbus,OH,4140
+2004/05,2004,11,SUNY University at Buffalo,Buffalo,NY,3965
+2004/05,2004,12,University of Wisconsin - Madison,Madison,WI,3941
+2004/05,2004,13,Texas A&M University - College Station,College Station,TX,3721
+2004/05,2004,14,University of Pennsylvania,Philadelphia,PA,3712
+2004/05,2004,15,Houston Community College System,Houston,TX,3702
+2004/05,2004,16,University of Maryland - College Park,College Park,MD,3646
+2004/05,2004,17,Harvard University,Cambridge,MA,3546
+2004/05,2004,18,Indiana University - Bloomington,Bloomington,IN,3525
+2004/05,2004,19,University of Florida,Gainesville,FL,3492
+2004/05,2004,20,University of Houston,Houston,TX,3326
+2004/05,2004,21,Michigan State University,East Lansing,MI,3315
+2004/05,2004,22,University of Minnesota - Twin Cities,Minneapolis,MN,3302
+2004/05,2004,23,Pennsylvania State University - University Park,University Park,PA,3237
+2004/05,2004,24,Florida International University,Miami,FL,3155
+2004/05,2004,25,Cornell University,Ithaca,NY,3119
+2005/06,2005,1,University of Southern California,Los Angeles,CA,6881
+2005/06,2005,2,Columbia University,New York,NY,5575
+2005/06,2005,3,Purdue University - West Lafayette,West Lafayette,IN,5540
+2005/06,2005,4,New York University,New York,NY,5502
+2005/06,2005,5,University of Texas - Austin,Austin,TX,5395
+2005/06,2005,6,University of Illinois - Urbana-Champaign,Champaign,IL,4904
+2005/06,2005,7,University of Michigan - Ann Arbor,Ann Arbor,MI,4649
+2005/06,2005,8,Boston University,Boston,MA,4542
+2005/06,2005,9,Ohio State University - Columbus,Columbus,OH,4476
+2005/06,2005,10,SUNY University at Buffalo,Buffalo,NY,4072
+2005/06,2005,11,University of California - Los Angeles,Los Angeles,CA,3979
+2005/06,2005,12,University of Florida,Gainesville,FL,3749
+2005/06,2005,13,Cornell University,Ithaca,NY,3697
+2005/06,2005,14,University of Pennsylvania,Philadelphia,PA,3689
+2005/06,2005,15,Harvard University,Cambridge,MA,3669
+2005/06,2005,16,Texas A&M University - College Station,College Station,TX,3589
+2005/06,2005,17,Indiana University - Bloomington,Bloomington,IN,3540
+2005/06,2005,18,University of Maryland - College Park,College Park,MD,3476
+2005/06,2005,19,University of Houston,Houston,TX,3413
+2005/06,2005,20,University of Minnesota - Twin Cities,Minneapolis,MN,3384
+2005/06,2005,21,University of Wisconsin - Madison,Madison,WI,3381
+2005/06,2005,22,Michigan State University,East Lansing,MI,3293
+2005/06,2005,23,Houston Community College System,Houston,TX,3227
+2005/06,2005,24,Stanford University,Stanford,CA,3200
+2005/06,2005,25,Pennsylvania State University - University Park,University Park,PA,3199
+2006/07,2006,1,University of Southern California,Los Angeles,CA,7115
+2006/07,2006,2,Columbia University,New York,NY,5937
+2006/07,2006,3,New York University,New York,NY,5827
+2006/07,2006,4,University of Illinois - Urbana-Champaign,Champaign,IL,5685
+2006/07,2006,5,Purdue University - West Lafayette,West Lafayette,IN,5581
+2006/07,2006,6,University of Michigan - Ann Arbor,Ann Arbor,MI,5429
+2006/07,2006,7,University of Texas - Austin,Austin,TX,5303
+2006/07,2006,8,University of California - Los Angeles,Los Angeles,CA,4704
+2006/07,2006,9,Harvard University,Cambridge,MA,4514
+2006/07,2006,10,Boston University,Boston,MA,4484
+2006/07,2006,10,University of Pennsylvania,Philadelphia,PA,4484
+2006/07,2006,12,Ohio State University - Columbus,Columbus,OH,4345
+2006/07,2006,13,SUNY University at Buffalo,Buffalo,NY,4103
+2006/07,2006,14,Arizona State University - Tempe,Tempe,AZ,4062
+2006/07,2006,15,Indiana University - Bloomington,Bloomington,IN,3976
+2006/07,2006,16,Michigan State University,East Lansing,MI,3968
+2006/07,2006,17,University of Florida,Gainesville,FL,3921
+2006/07,2006,18,Texas A&M University - College Station,College Station,TX,3857
+2006/07,2006,19,University of Wisconsin - Madison,Madison,WI,3829
+2006/07,2006,20,Stanford University,Stanford,CA,3751
+2006/07,2006,21,Cornell University,Ithaca,NY,3746
+2006/07,2006,22,University of Minnesota - Twin Cities,Minneapolis,MN,3701
+2006/07,2006,23,Pennsylvania State University - University Park,University Park,PA,3681
+2006/07,2006,24,University of Maryland - College Park,College Park,MD,3476
+2006/07,2006,25,Houston Community College System,Houston,TX,3378
+2007/08,2007,1,University of Southern California,Los Angeles,CA,7189
+2007/08,2007,2,New York University,New York,NY,6404
+2007/08,2007,3,Columbia University,New York,NY,6297
+2007/08,2007,4,University of Illinois - Urbana-Champaign,Champaign,IL,5933
+2007/08,2007,5,Purdue University - West Lafayette,West Lafayette,IN,5772
+2007/08,2007,6,University of Michigan - Ann Arbor,Ann Arbor,MI,5748
+2007/08,2007,7,University of California - Los Angeles,Los Angeles,CA,5557
+2007/08,2007,8,University of Texas - Austin,Austin,TX,5550
+2007/08,2007,9,Harvard University,Cambridge,MA,4948
+2007/08,2007,10,Boston University,Boston,MA,4789
+2007/08,2007,11,University of Pennsylvania,Philadelphia,PA,4610
+2007/08,2007,12,SUNY University at Buffalo,Buffalo,NY,4363
+2007/08,2007,13,Indiana University - Bloomington,Bloomington,IN,4287
+2007/08,2007,14,Ohio State University - Columbus,Columbus,OH,4259
+2007/08,2007,15,Michigan State University,East Lansing,MI,4244
+2007/08,2007,16,University of Florida,Gainesville,FL,4228
+2007/08,2007,17,Texas A&M University - College Station,College Station,TX,4094
+2007/08,2007,18,Arizona State University - Tempe,Tempe,AZ,3979
+2007/08,2007,19,Cornell University,Ithaca,NY,3928
+2007/08,2007,20,University of Wisconsin - Madison,Madison,WI,3910
+2007/08,2007,21,Stanford University,Stanford,CA,3898
+2007/08,2007,22,Pennsylvania State University - University Park,University Park,PA,3860
+2007/08,2007,23,University of Minnesota - Twin Cities,Minneapolis,MN,3756
+2007/08,2007,24,Georgia Institute of Technology,Atlanta,GA,3616
+2007/08,2007,25,University of Houston,Houston,TX,3420
+2008/09,2008,1,University of Southern California,Los Angeles,CA,7482
+2008/09,2008,2,New York University,New York,NY,6761
+2008/09,2008,3,Columbia University,New York,NY,6685
+2008/09,2008,4,University of Illinois - Urbana-Champaign,Champaign,IL,6570
+2008/09,2008,5,Purdue University - West Lafayette,West Lafayette,IN,6136
+2008/09,2008,6,University of Michigan - Ann Arbor,Ann Arbor,MI,5790
+2008/09,2008,7,University of Texas - Austin,Austin,TX,5703
+2008/09,2008,8,University of California - Los Angeles,Los Angeles,CA,5590
+2008/09,2008,9,Boston University,Boston,MA,5037
+2008/09,2008,10,Michigan State University,East Lansing,MI,4757
+2008/09,2008,11,Harvard University,Cambridge,MA,4735
+2008/09,2008,12,University of Florida,Gainesville,FL,4731
+2008/09,2008,13,University of Pennsylvania,Philadelphia,PA,4635
+2008/09,2008,14,Ohio State University - Columbus,Columbus,OH,4583
+2008/09,2008,15,Indiana University - Bloomington,Bloomington,IN,4565
+2008/09,2008,16,Texas A&M University - College Station,College Station,TX,4558
+2008/09,2008,17,SUNY University at Buffalo,Buffalo,NY,4539
+2008/09,2008,18,Arizona State University - Tempe,Tempe,AZ,4375
+2008/09,2008,19,University of Wisconsin - Madison,Madison,WI,4243
+2008/09,2008,20,University of Minnesota - Twin Cities,Minneapolis,MN,4120
+2008/09,2008,21,Cornell University,Ithaca,NY,4018
+2008/09,2008,22,Stanford University,Stanford,CA,3976
+2008/09,2008,23,Georgia Institute of Technology,Atlanta,GA,3911
+2008/09,2008,24,University of Houston,Houston,TX,3778
+2008/09,2008,25,Pennsylvania State University - University Park,University Park,PA,3741
+2009/10,2009,1,University of Southern California,Los Angeles,CA,7987
+2009/10,2009,2,University of Illinois - Urbana-Champaign,Champaign,IL,7287
+2009/10,2009,3,New York University,New York,NY,7276
+2009/10,2009,4,Purdue University - West Lafayette,West Lafayette,IN,6903
+2009/10,2009,5,Columbia University,New York,NY,6833
+2009/10,2009,6,Houston Community College System,Houston,TX,6125
+2009/10,2009,7,University of Michigan - Ann Arbor,Ann Arbor,MI,6095
+2009/10,2009,8,University of California - Los Angeles,Los Angeles,CA,5685
+2009/10,2009,9,Michigan State University,East Lansing,MI,5358
+2009/10,2009,10,University of Texas - Austin,Austin,TX,5265
+2009/10,2009,11,Boston University,Boston,MA,5172
+2009/10,2009,12,University of Florida,Gainesville,FL,4920
+2009/10,2009,13,SUNY University at Buffalo,Buffalo,NY,4911
+2009/10,2009,14,Harvard University,Cambridge,MA,4867
+2009/10,2009,15,Indiana University - Bloomington,Bloomington,IN,4819
+2009/10,2009,16,Ohio State University - Columbus,Columbus,OH,4796
+2009/10,2009,17,University of Minnesota - Twin Cities,Minneapolis,MN,4665
+2009/10,2009,18,Texas A&M University - College Station,College Station,TX,4611
+2009/10,2009,19,Pennsylvania State University - University Park,University Park,PA,4561
+2009/10,2009,20,University of Pennsylvania,Philadelphia,PA,4522
+2009/10,2009,21,Arizona State University - Tempe,Tempe,AZ,4483
+2009/10,2009,22,University of Wisconsin - Madison,Madison,WI,4312
+2009/10,2009,23,Cornell University,Ithaca,NY,4115
+2009/10,2009,24,University of Houston,Houston,TX,4103
+2009/10,2009,25,Georgia Institute of Technology,Atlanta,GA,4030
+2010/11,2010,1,University of Southern California,Los Angeles,CA,8615
+2010/11,2010,2,University of Illinois - Urbana-Champaign,Champaign,IL,7991
+2010/11,2010,3,New York University,New York,NY,7988
+2010/11,2010,4,Purdue University - West Lafayette,West Lafayette,IN,7562
+2010/11,2010,5,Columbia University,New York,NY,7297
+2010/11,2010,6,University of California - Los Angeles,Los Angeles,CA,6249
+2010/11,2010,7,Ohio State University - Columbus,Columbus,OH,6082
+2010/11,2010,8,University of Michigan - Ann Arbor,Ann Arbor,MI,5995
+2010/11,2010,9,Michigan State University,East Lansing,MI,5748
+2010/11,2010,10,Harvard University,Cambridge,MA,5594
+2010/11,2010,11,Indiana University - Bloomington,Bloomington,IN,5471
+2010/11,2010,12,Boston University,Boston,MA,5464
+2010/11,2010,13,University of Florida,Gainesville,FL,5393
+2010/11,2010,14,University of Texas - Austin,Austin,TX,5323
+2010/11,2010,15,Pennsylvania State University - University Park,University Park,PA,5207
+2010/11,2010,16,Northeastern University - Boston,Boston,MA,5187
+2010/11,2010,17,SUNY University at Buffalo,Buffalo,NY,5185
+2010/11,2010,18,University of Minnesota - Twin Cities,Minneapolis,MN,5124
+2010/11,2010,19,Georgia Institute of Technology,Atlanta,GA,4943
+2010/11,2010,20,Arizona State University - Tempe,Tempe,AZ,4934
+2010/11,2010,21,Texas A&M University - College Station,College Station,TX,4874
+2010/11,2010,22,University of Pennsylvania,Philadelphia,PA,4752
+2010/11,2010,23,University of Wisconsin - Madison,Madison,WI,4647
+2010/11,2010,24,University of Houston,Houston,TX,4377
+2010/11,2010,25,Cornell University,Ithaca,NY,4357
+2011/12,2011,1,University of Southern California,Los Angeles,CA,9269
+2011/12,2011,2,University of Illinois - Urbana-Champaign,Champaign,IL,8997
+2011/12,2011,3,New York University,New York,NY,8660
+2011/12,2011,4,Purdue University - West Lafayette,West Lafayette,IN,8563
+2011/12,2011,5,Columbia University,New York,NY,8024
+2011/12,2011,6,University of California - Los Angeles,Los Angeles,CA,6703
+2011/12,2011,7,Northeastern University - Boston,Boston,MA,6486
+2011/12,2011,8,University of Michigan - Ann Arbor,Ann Arbor,MI,6382
+2011/12,2011,9,Michigan State University,East Lansing,MI,6209
+2011/12,2011,10,Ohio State University - Columbus,Columbus,OH,6142
+2011/12,2011,11,Indiana University - Bloomington,Bloomington,IN,6123
+2011/12,2011,12,Pennsylvania State University - University Park,University Park,PA,6075
+2011/12,2011,13,Boston University,Boston,MA,6041
+2011/12,2011,14,University of Minnesota - Twin Cities,Minneapolis,MN,5661
+2011/12,2011,15,Arizona State University - Tempe,Tempe,AZ,5616
+2011/12,2011,16,University of Florida,Gainesville,FL,5588
+2011/12,2011,17,Harvard University,Cambridge,MA,5453
+2011/12,2011,18,University of Washington,Seattle,WA,5372
+2011/12,2011,19,SUNY University at Buffalo,Buffalo,NY,5357
+2011/12,2011,20,University of Texas - Austin,Austin,TX,5324
+2011/12,2011,21,University of Pennsylvania,Philadelphia,PA,5296
+2011/12,2011,22,Texas A&M University - College Station,College Station,TX,5013
+2011/12,2011,23,University of California - Berkeley,Berkeley,CA,5004
+2011/12,2011,24,Georgia Institute of Technology,Atlanta,GA,4973
+2011/12,2011,25,University of Houston,Houston,TX,4879
+2012/13,2012,1,University of Southern California,Los Angeles,CA,9840
+2012/13,2012,2,University of Illinois - Urbana-Champaign,Champaign,IL,9804
+2012/13,2012,3,Purdue University - West Lafayette,West Lafayette,IN,9509
+2012/13,2012,4,New York University,New York,NY,9362
+2012/13,2012,5,Columbia University,New York,NY,8797
+2012/13,2012,6,University of California - Los Angeles,Los Angeles,CA,8424
+2012/13,2012,7,Northeastern University - Boston,Boston,MA,7705
+2012/13,2012,8,University of Michigan - Ann Arbor,Ann Arbor,MI,6827
+2012/13,2012,9,Michigan State University,East Lansing,MI,6759
+2012/13,2012,10,Pennsylvania State University - University Park,University Park,PA,6693
+2012/13,2012,11,Arizona State University - Tempe,Tempe,AZ,6645
+2012/13,2012,12,Boston University,Boston,MA,6615
+2012/13,2012,13,Indiana University - Bloomington,Bloomington,IN,6547
+2012/13,2012,14,University of Washington,Seattle,WA,6491
+2012/13,2012,15,Ohio State University - Columbus,Columbus,OH,6478
+2012/13,2012,16,University of Minnesota - Twin Cities,Minneapolis,MN,6178
+2012/13,2012,17,University of Florida,Gainesville,FL,5961
+2012/13,2012,18,SUNY University at Buffalo,Buffalo,NY,5804
+2012/13,2012,19,University of Pennsylvania,Philadelphia,PA,5751
+2012/13,2012,20,University of California - Berkeley,Berkeley,CA,5632
+2012/13,2012,21,University of Texas - Austin,Austin,TX,5481
+2012/13,2012,22,Houston Community College System,Houston,TX,5333
+2012/13,2012,23,University of Wisconsin - Madison,Madison,WI,5291
+2012/13,2012,24,University of Texas - Dallas,Richardson,TX,5193
+2012/13,2012,25,Texas A&M University - College Station,College Station,TX,5149
+2013/14,2013,1,New York University,New York,NY,11164
+2013/14,2013,2,University of Southern California,Los Angeles,CA,10932
+2013/14,2013,3,University of Illinois - Urbana-Champaign,Champaign,IL,10843
+2013/14,2013,4,Columbia University,New York,NY,10486
+2013/14,2013,5,Purdue University - West Lafayette,West Lafayette,IN,9988
+2013/14,2013,6,University of California - Los Angeles,Los Angeles,CA,9579
+2013/14,2013,7,Northeastern University - Boston,Boston,MA,9078
+2013/14,2013,8,Arizona State University - Tempe,Tempe,AZ,8683
+2013/14,2013,9,Michigan State University,East Lansing,MI,7704
+2013/14,2013,10,University of Washington,Seattle,WA,7469
+2013/14,2013,11,University of Michigan - Ann Arbor,Ann Arbor,MI,7273
+2013/14,2013,12,Boston University,Boston,MA,7143
+2013/14,2013,13,Pennsylvania State University - University Park,University Park,PA,7024
+2013/14,2013,14,Ohio State University - Columbus,Columbus,OH,6800
+2013/14,2013,15,Indiana University - Bloomington,Bloomington,IN,6661
+2013/14,2013,16,University of Minnesota - Twin Cities,Minneapolis,MN,6621
+2013/14,2013,17,SUNY University at Buffalo,Buffalo,NY,6594
+2013/14,2013,18,University of California - Berkeley,Berkeley,CA,6372
+2013/14,2013,19,University of Texas - Dallas,Richardson,TX,6296
+2013/14,2013,20,University of Florida,Gainesville,FL,6135
+2013/14,2013,21,University of Pennsylvania,Philadelphia,PA,6024
+2013/14,2013,22,University of Wisconsin - Madison,Madison,WI,5718
+2013/14,2013,23,University of Texas - Austin,Austin,TX,5663
+2013/14,2013,24,Texas A&M University - College Station,College Station,TX,5582
+2013/14,2013,25,Carnegie Mellon University,Pittsburgh,PA,5501
+2014/15,2014,1,New York University,New York,NY,13178
+2014/15,2014,2,University of Southern California,Los Angeles,CA,12334
+2014/15,2014,3,Columbia University,New York,NY,11510
+2014/15,2014,4,Arizona State University - Tempe,Tempe,AZ,11330
+2014/15,2014,5,University of Illinois - Urbana-Champaign,Champaign,IL,11223
+2014/15,2014,6,Northeastern University - Boston,Boston,MA,10559
+2014/15,2014,7,Purdue University - West Lafayette,West Lafayette,IN,10230
+2014/15,2014,8,University of California - Los Angeles,Los Angeles,CA,10209
+2014/15,2014,9,Michigan State University,East Lansing,MI,8146
+2014/15,2014,10,University of Washington,Seattle,WA,8035
+2014/15,2014,11,Boston University,Boston,MA,7860
+2014/15,2014,12,Pennsylvania State University - University Park,University Park,PA,7728
+2014/15,2014,13,University of Michigan - Ann Arbor,Ann Arbor,MI,7423
+2014/15,2014,14,Ohio State University - Columbus,Columbus,OH,7121
+2014/15,2014,15,University of Texas - Dallas,Richardson,TX,7064
+2014/15,2014,16,Indiana University - Bloomington,Bloomington,IN,7009
+2014/15,2014,17,University of Minnesota - Twin Cities,Minneapolis,MN,6984
+2014/15,2014,18,University of California - Berkeley,Berkeley,CA,6874
+2014/15,2014,19,SUNY University at Buffalo,Buffalo,NY,6852
+2014/15,2014,20,Texas A&M University - College Station,College Station,TX,6690
+2014/15,2014,21,Carnegie Mellon University,Pittsburgh,PA,6198
+2014/15,2014,22,University of Pennsylvania,Philadelphia,PA,6167
+2014/15,2014,23,University of Florida,Gainesville,FL,6148
+2014/15,2014,24,University of Wisconsin - Madison,Madison,WI,5977
+2014/15,2014,25,University of Texas - Austin,Austin,TX,5947
+2015/16,2015,1,New York University,New York,NY,15543
+2015/16,2015,2,University of Southern California,Los Angeles,CA,13340
+2015/16,2015,3,Arizona State University - Tempe,Tempe,AZ,12751
+2015/16,2015,4,Columbia University,New York,NY,12740
+2015/16,2015,5,University of Illinois - Urbana-Champaign,Champaign,IL,12085
+2015/16,2015,6,Northeastern University - Boston,Boston,MA,11702
+2015/16,2015,7,University of California - Los Angeles,Los Angeles,CA,11513
+2015/16,2015,8,Purdue University - West Lafayette,West Lafayette,IN,10563
+2015/16,2015,9,Boston University,Boston,MA,8455
+2015/16,2015,10,University of Washington,Seattle,WA,8259
+2015/16,2015,11,Michigan State University,East Lansing,MI,8256
+2015/16,2015,12,University of Texas - Dallas,Richardson,TX,8145
+2015/16,2015,13,Pennsylvania State University - University Park,University Park,PA,8084
+2015/16,2015,14,University of Michigan - Ann Arbor,Ann Arbor,MI,7630
+2015/16,2015,15,University of California - San Diego,La Jolla,CA,7556
+2015/16,2015,16,University of California - Berkeley,Berkeley,CA,7313
+2015/16,2015,17,Indiana University - Bloomington,Bloomington,IN,7159
+2015/16,2015,18,Ohio State University - Columbus,Columbus,OH,7117
+2015/16,2015,19,Carnegie Mellon University,Pittsburgh,PA,7051
+2015/16,2015,20,University of Minnesota - Twin Cities,Minneapolis,MN,7037
+2015/16,2015,21,SUNY University at Buffalo,Buffalo,NY,7026
+2015/16,2015,22,Texas A&M University - College Station,College Station,TX,6940
+2015/16,2015,23,University of Florida,Gainesville,FL,6751
+2015/16,2015,24,University of Wisconsin - Madison,Madison,WI,6440
+2015/16,2015,25,University of Pennsylvania,Philadelphia,PA,6221
+2016/17,2016,1,New York University,New York,NY,17326
+2016/17,2016,2,University of Southern California,Los Angeles,CA,14327
+2016/17,2016,3,Columbia University,New York,NY,14096
+2016/17,2016,4,Northeastern University - Boston,Boston,MA,13201
+2016/17,2016,5,Arizona State University - Tempe,Tempe,AZ,13164
+2016/17,2016,6,University of Illinois - Urbana-Champaign,Champaign,IL,12454
+2016/17,2016,7,University of California - Los Angeles,Los Angeles,CA,12199
+2016/17,2016,8,Purdue University - West Lafayette,West Lafayette,IN,11288
+2016/17,2016,9,University of Texas - Dallas,Richardson,TX,9305
+2016/17,2016,10,Pennsylvania State University - University Park,University Park,PA,9134
+2016/17,2016,11,University of California - San Diego,La Jolla,CA,9065
+2016/17,2016,12,Boston University,Boston,MA,8992
+2016/17,2016,13,University of Michigan - Ann Arbor,Ann Arbor,MI,8163
+2016/17,2016,14,University of Washington,Seattle,WA,8019
+2016/17,2016,15,University of California - Berkeley,Berkeley,CA,8000
+2016/17,2016,16,Michigan State University,East Lansing,MI,7779
+2016/17,2016,17,Ohio State University - Columbus,Columbus,OH,7684
+2016/17,2016,18,Carnegie Mellon University,Pittsburgh,PA,7653
+2016/17,2016,19,Indiana University - Bloomington,Bloomington,IN,7502
+2016/17,2016,20,University of Texas - Arlington,Arlington,TX,7277
+2016/17,2016,21,SUNY University at Buffalo,Buffalo,NY,7252
+2016/17,2016,22,University of Minnesota - Twin Cities,Minneapolis,MN,7197
+2016/17,2016,23,University of Florida,Gainesville,FL,7107
+2016/17,2016,24,Texas A&M University - College Station,College Station,TX,6960
+2016/17,2016,25,University of California - Irvine,Irvine,CA,6792
+2017/18,2017,1,New York University,New York,NY,17552
+2017/18,2017,2,University of Southern California,Los Angeles,CA,16075
+2017/18,2017,3,Northeastern University - Boston,Boston,MA,14905
+2017/18,2017,4,Columbia University,New York,NY,14615
+2017/18,2017,5,Arizona State University - Tempe,Tempe,AZ,13459
+2017/18,2017,6,University of Illinois - Urbana-Champaign,Champaign,IL,13445
+2017/18,2017,7,University of California - Los Angeles,Los Angeles,CA,12017
+2017/18,2017,8,Purdue University - West Lafayette,West Lafayette,IN,11044
+2017/18,2017,9,University of California - San Diego,La Jolla,CA,9883
+2017/18,2017,10,Boston University,Boston,MA,9742
+2017/18,2017,11,University of Texas - Dallas,Richardson,TX,9713
+2017/18,2017,12,University of California - Berkeley,Berkeley,CA,9331
+2017/18,2017,13,University of Washington,Seattle,WA,8902
+2017/18,2017,14,Pennsylvania State University - University Park,University Park,PA,8636
+2017/18,2017,15,Carnegie Mellon University,Pittsburgh,PA,8604
+2017/18,2017,16,University of Michigan - Ann Arbor,Ann Arbor,MI,8442
+2017/18,2017,17,University of California - Irvine,Irvine,CA,7902
+2017/18,2017,18,Michigan State University,East Lansing,MI,7624
+2017/18,2017,19,Indiana University - Bloomington,Bloomington,IN,7343
+2017/18,2017,20,University of California - Davis,Davis,CA,7316
+2017/18,2017,21,University of Minnesota - Twin Cities,Minneapolis,MN,7212
+2017/18,2017,22,SUNY University at Buffalo,Buffalo,NY,7126
+2017/18,2017,23,Ohio State University - Columbus,Columbus,OH,7110
+2017/18,2017,24,University of Wisconsin - Madison,Madison,WI,7080
+2017/18,2017,25,Texas A&M University - College Station,College Station,TX,6894
+2018/19,2018,1,New York University,New York,NY,19605
+2018/19,2018,2,University of Southern California,Los Angeles,CA,16340
+2018/19,2018,3,Northeastern University - Boston,Boston,MA,16075
+2018/19,2018,4,Columbia University,New York,NY,15897
+2018/19,2018,5,University of Illinois - Urbana-Champaign,Champaign,IL,13497
+2018/19,2018,6,Arizona State University - Tempe,Tempe,AZ,13324
+2018/19,2018,7,University of California - Los Angeles,Los Angeles,CA,11942
+2018/19,2018,8,Purdue University - West Lafayette,West Lafayette,IN,10943
+2018/19,2018,9,University of California - San Diego,La Jolla,CA,10652
+2018/19,2018,10,Boston University,Boston,MA,10598
+2018/19,2018,11,University of California - Berkeley,Berkeley,CA,10063
+2018/19,2018,12,University of Texas - Dallas,Richardson,TX,9401
+2018/19,2018,13,Pennsylvania State University - University Park,University Park,PA,9396
+2018/19,2018,14,University of Washington,Seattle,WA,9311
+2018/19,2018,15,University of Michigan - Ann Arbor,Ann Arbor,MI,8726
+2018/19,2018,16,Carnegie Mellon University,Pittsburgh,PA,8669
+2018/19,2018,17,University of California - Irvine,Irvine,CA,8064
+2018/19,2018,18,University of California - Davis,Davis,CA,8048
+2018/19,2018,19,Ohio State University - Columbus,Columbus,OH,8020
+2018/19,2018,20,Cornell University,Ithaca,NY,7214
+2018/19,2018,21,University of Wisconsin - Madison,Madison,WI,7189
+2018/19,2018,22,Texas A&M University - College Station,College Station,TX,7163
+2018/19,2018,23,SUNY University at Buffalo,Buffalo,NY,7121
+2018/19,2018,24,University of Pennsylvania,Philadelphia,PA,7062
+2018/19,2018,25,Michigan State University,East Lansing,MI,7052
+2019/20,2019,1,New York University,New York,NY,21093
+2019/20,2019,2,Northeastern University - Boston,Boston,MA,17491
+2019/20,2019,3,University of Southern California,Los Angeles,CA,17309
+2019/20,2019,4,Columbia University,New York,NY,17145
+2019/20,2019,5,University of Illinois - Urbana-Champaign,Champaign,IL,13962
+2019/20,2019,6,Arizona State University - Tempe,Tempe,AZ,13136
+2019/20,2019,7,University of California - Los Angeles,Los Angeles,CA,11447
+2019/20,2019,8,University of California - San Diego,La Jolla,CA,11272
+2019/20,2019,9,Purdue University - West Lafayette,West Lafayette,IN,11173
+2019/20,2019,10,Boston University,Boston,MA,11158
+2019/20,2019,11,University of California - Berkeley,Berkeley,CA,10695
+2019/20,2019,12,Pennsylvania State University - University Park,University Park,PA,9244
+2019/20,2019,13,University of Washington,Seattle,WA,9236
+2019/20,2019,14,University of Michigan - Ann Arbor,Ann Arbor,MI,9000
+2019/20,2019,15,University of Texas - Dallas,Richardson,TX,8787
+2019/20,2019,16,University of California - Irvine,Irvine,CA,8773
+2019/20,2019,17,Carnegie Mellon University,Pittsburgh,PA,8694
+2019/20,2019,18,University of California - Davis,Davis,CA,7919
+2019/20,2019,19,Ohio State University - Columbus,Columbus,OH,7894
+2019/20,2019,20,Cornell University,Ithaca,NY,7623
+2019/20,2019,21,Texas A&M University - College Station,College Station,TX,7370
+2019/20,2019,22,University of Pennsylvania,Philadelphia,PA,7263
+2019/20,2019,23,Rutgers University - New Brunswick,New Brunswick,NJ,7261
+2019/20,2019,24,University of Wisconsin - Madison,Madison,WI,7217
+2019/20,2019,25,University of Florida,Gainesville,FL,7172
+2020/21,2020,1,New York University,New York,NY,17050
+2020/21,2020,2,Northeastern University - Boston,Boston,MA,15880
+2020/21,2020,3,Columbia University,New York,NY,15015
+2020/21,2020,4,University of Southern California,Los Angeles,CA,14992
+2020/21,2020,5,Arizona State University - Tempe,Tempe,AZ,13015
+2020/21,2020,6,University of Illinois - Urbana-Champaign,Champaign,IL,12838
+2020/21,2020,7,University of California - San Diego,La Jolla,CA,10824
+2020/21,2020,8,Boston University,Boston,MA,10646
+2020/21,2020,9,Purdue University - West Lafayette,West Lafayette,IN,10500
+2020/21,2020,10,University of California - Los Angeles,Los Angeles,CA,10273
+2020/21,2020,11,University of California - Berkeley,Berkeley,CA,9184
+2020/21,2020,12,University of Washington,Seattle,WA,8777
+2020/21,2020,13,University of Texas - Dallas,Richardson,TX,8475
+2020/21,2020,14,Pennsylvania State University - University Park,University Park,PA,8267
+2020/21,2020,15,University of Michigan - Ann Arbor,Ann Arbor,MI,8252
+2020/21,2020,16,University of California - Irvine,Irvine,CA,7766
+2020/21,2020,17,University of California - Davis,Davis,CA,7422
+2020/21,2020,18,Carnegie Mellon University,Pittsburgh,PA,7396
+2020/21,2020,19,University of Wisconsin - Madison,Madison,WI,7139
+2020/21,2020,20,Ohio State University - Columbus,Columbus,OH,6865
+2020/21,2020,21,Johns Hopkins University,Baltimore,MD,6723
+2020/21,2020,22,Cornell University,Ithaca,NY,6692
+2020/21,2020,23,University of Pennsylvania,Philadelphia,PA,6562
+2020/21,2020,24,Rutgers University - New Brunswick,New Brunswick,NJ,6554
+2020/21,2020,25,Texas A&M University - College Station,College Station,TX,6511
+2021/22,2021,1,New York University,New York,NY,21081
+2021/22,2021,2,Northeastern University - Boston,Boston,MA,17836
+2021/22,2021,3,Columbia University,New York,NY,16956
+2021/22,2021,4,University of Southern California,Los Angeles,CA,15729
+2021/22,2021,5,Arizona State University - Campus Immersion,Tempe,AZ,15293
+2021/22,2021,6,University of Illinois - Urbana-Champaign,Champaign,IL,12833
+2021/22,2021,7,Boston University,Boston,MA,11798
+2021/22,2021,8,University of California - San Diego,La Jolla,CA,11279
+2021/22,2021,9,Purdue University - West Lafayette,West Lafayette,IN,11198
+2021/22,2021,10,University of California - Los Angeles,Los Angeles,CA,10990
+2021/22,2021,11,University of California - Berkeley,Berkeley,CA,10664
+2021/22,2021,12,University of Michigan - Ann Arbor,Ann Arbor,MI,9349
+2021/22,2021,13,Pennsylvania State University - University Park,University Park,PA,9313
+2021/22,2021,14,University of Washington,Seattle,WA,8682
+2021/22,2021,15,Carnegie Mellon University,Pittsburgh,PA,8196
+2021/22,2021,16,Georgia Institute of Technology,Atlanta,GA,8040
+2021/22,2021,17,Johns Hopkins University,Baltimore,MD,7893
+2021/22,2021,18,University of California - Irvine,Irvine,CA,7888
+2021/22,2021,19,University of Texas - Dallas,Richardson,TX,7741
+2021/22,2021,20,University of Wisconsin - Madison,Madison,WI,7686
+2021/22,2021,21,Cornell University,Ithaca,NY,7579
+2021/22,2021,22,University of California - Davis,Davis,CA,7505
+2021/22,2021,23,University of Pennsylvania,Philadelphia,PA,7400
+2021/22,2021,24,Texas A&M University - College Station,College Station,TX,7162
+2021/22,2021,25,SUNY University at Buffalo,Buffalo,NY,6723
+2022/23,2022,1,New York University,New York,NY,24496
+2022/23,2022,2,Northeastern University - Boston,Boston,MA,20637
+2022/23,2022,3,Columbia University,New York,NY,19001
+2022/23,2022,4,Arizona State University - Campus Immersion,Tempe,AZ,17981
+2022/23,2022,5,University of Southern California,Los Angeles,CA,17264
+2022/23,2022,6,University of Illinois - Urbana-Champaign,Champaign,IL,14680
+2022/23,2022,7,Boston University,Boston,MA,13281
+2022/23,2022,8,Purdue University - West Lafayette,West Lafayette,IN,11872
+2022/23,2022,9,University of California - Berkeley,Berkeley,CA,11719
+2022/23,2022,10,University of California - San Diego,La Jolla,CA,10431
+2022/23,2022,11,University of Michigan - Ann Arbor,Ann Arbor,MI,10411
+2022/23,2022,12,University of Washington,Seattle,WA,10198
+2022/23,2022,13,University of California - Los Angeles,Los Angeles,CA,9725
+2022/23,2022,14,University of Texas - Dallas,Richardson,TX,9582
+2022/23,2022,15,Johns Hopkins University,Baltimore,MD,9322
+2022/23,2022,16,Pennsylvania State University - University Park,University Park,PA,9161
+2022/23,2022,17,Carnegie Mellon University,Pittsburgh,PA,9009
+2022/23,2022,18,University of California - Irvine,Irvine,CA,8984
+2022/23,2022,19,University of Pennsylvania,Philadelphia,PA,8614
+2022/23,2022,20,University of Wisconsin - Madison,Madison,WI,8567
+2022/23,2022,21,Cornell University,Ithaca,NY,8403
+2022/23,2022,22,University of North Texas,Denton,TX,8200
+2022/23,2022,23,SUNY University at Buffalo,Buffalo,NY,7696
+2022/23,2022,24,Georgia Institute of Technology,Atlanta,GA,7671
+2022/23,2022,25,University of California - Davis,Davis,CA,7621
+2023/24,2023,1,New York University,New York,NY,27247
+2023/24,2023,2,Northeastern University - Boston,Boston,MA,21023
+2023/24,2023,3,Columbia University,New York,NY,20321
+2023/24,2023,4,Arizona State University - Campus Immersion,Tempe,AZ,18430
+2023/24,2023,5,University of Southern California,Los Angeles,CA,17469
+2023/24,2023,6,University of Illinois - Urbana-Champaign,Champaign,IL,15376
+2023/24,2023,7,Boston University,Boston,MA,12853
+2023/24,2023,8,University of California - Berkeley,Berkeley,CA,12441
+2023/24,2023,9,Purdue University - West Lafayette,West Lafayette,IN,12181
+2023/24,2023,10,University of North Texas,Denton,TX,11917
+2023/24,2023,11,University of Michigan - Ann Arbor,Ann Arbor,MI,11766
+2023/24,2023,12,University of Washington,Seattle,WA,10720
+2023/24,2023,13,University of Texas - Dallas,Richardson,TX,10491
+2023/24,2023,14,University of California - San Diego,La Jolla,CA,10467
+2023/24,2023,15,University of California - Los Angeles,Los Angeles,CA,10446
+2023/24,2023,16,Johns Hopkins University,Baltimore,MD,10054
+2023/24,2023,17,Carnegie Mellon University,Pittsburgh,PA,9607
+2023/24,2023,18,University of Wisconsin - Madison,Madison,WI,9526
+2023/24,2023,19,Pennsylvania State University - University Park,University Park,PA,9093
+2023/24,2023,20,Cornell University,Ithaca,NY,9091
+2023/24,2023,21,University of Pennsylvania,Philadelphia,PA,8956
+2023/24,2023,22,University of California - Irvine,Irvine,CA,8748
+2023/24,2023,23,University of Texas - Arlington,Arlington,TX,8407
+2023/24,2023,24,SUNY University at Buffalo,Buffalo,NY,8380
+2023/24,2023,25,Georgia Institute of Technology,Atlanta,GA,8148
+2024/25,2024,1,New York University,New York,NY,27532
+2024/25,2024,2,Northeastern University - Boston,Boston,MA,22465
+2024/25,2024,3,Columbia University,New York,NY,20733
+2024/25,2024,4,Arizona State University - Campus Immersion,Tempe,AZ,20368
+2024/25,2024,5,University of Southern California,Los Angeles,CA,17884
+2024/25,2024,6,University of Illinois - Urbana-Champaign,Champaign,IL,16144
+2024/25,2024,7,University of North Texas,Denton,TX,12982
+2024/25,2024,8,Purdue University - West Lafayette,West Lafayette,IN,12874
+2024/25,2024,9,Boston University,Boston,MA,12845
+2024/25,2024,10,University of California - Berkeley,Berkeley,CA,12020
+2024/25,2024,11,University of Michigan - Ann Arbor,Ann Arbor,MI,11929
+2024/25,2024,12,University of Washington,Seattle,WA,10962
+2024/25,2024,13,Johns Hopkins University,Baltimore,MD,10863
+2024/25,2024,14,University of California - Los Angeles,Los Angeles,CA,10769
+2024/25,2024,15,University of California - San Diego,La Jolla,CA,10545
+2024/25,2024,16,University of Texas - Dallas,Richardson,TX,10280
+2024/25,2024,17,Carnegie Mellon University,Pittsburgh,PA,9836
+2024/25,2024,18,University of Wisconsin - Madison,Madison,WI,9769
+2024/25,2024,19,University of Pennsylvania,Philadelphia,PA,9143
+2024/25,2024,20,SUNY University at Buffalo,Buffalo,NY,9033
+2024/25,2024,21,Cornell University,Ithaca,NY,8790
+2024/25,2024,22,Georgia Institute of Technology,Atlanta,GA,8756
+2024/25,2024,23,Pennsylvania State University - University Park,University Park,PA,8739
+2024/25,2024,24,Harvard University,Cambridge,MA,8110
+2024/25,2024,25,University of Texas - Arlington,Arlington,TX,7864

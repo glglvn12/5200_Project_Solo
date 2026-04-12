@@ -116,15 +116,18 @@
       <tr><th>Table</th><th>Granularity</th><th>Years Used</th><th>Key Variable</th></tr>
     </thead>
     <tbody>
-      <tr><td>All Places of Origin</td><td>Country × Year</td><td>2000/01–2023/24</td><td>Korean student total</td></tr>
-      <tr><td>Leading Institutions</td><td>Country × Institution × Year</td><td>2000/01–2023/24</td><td>Korean count per university</td></tr>
-      <tr><td>Fields of Study</td><td>Country × Field × Year</td><td>2000/01–2023/24</td><td>Korean enrollment by major</td></tr>
+      <tr><td>All Places of Origin</td><td>Country × Year</td><td>2000/01–2024/25</td><td>Korean student national total</td></tr>
+      <tr><td>Leading Institutions</td><td>Institution × Year</td><td>2000/01–2024/25</td><td>Total international enrollment per institution (top 25 per year); used as a proxy for institutional attractiveness to Korean students</td></tr>
+      <tr><td>Fields of Study</td><td>Country × Field × Year</td><td>2009/10–2024/25</td><td>Korean enrollment share (%) by major category</td></tr>
     </tbody>
   </table>
   <div class="data-note">
-    ⚠️ <strong>Access note</strong>: IIE Open Doors historical tables may require a direct email request
-    to <code>opendoors@iie.org</code>. The interactive portal at <code>opendoorsdata.org</code>
-    provides summary figures but not full machine-readable downloads for all years.
+    ⚠️ <strong>Data note</strong>: The IIE "Leading Institutions" table reports
+    <strong>total international enrollment</strong> at each institution, not Korean-specific
+    counts. Korean-student counts per institution are not published at the institution level
+    by IIE Open Doors. This project uses total international enrollment as an institutional
+    attractiveness proxy. Access to full historical tables may require a direct email request
+    to <code>opendoors@iie.org</code>.
   </div>
 
   <h3>A.2 IPEDS</h3>
@@ -183,25 +186,37 @@
   <h3>B.2 Institution Name Standardization</h3>
   <p>
     IIE institution names and IPEDS institution names use inconsistent abbreviations
-    and punctuation. A fuzzy matching approach was used to build a crosswalk table,
-    followed by manual review of all matches with a similarity score below 0.90:
+    and punctuation. A fuzzy matching approach was used to build a crosswalk table
+    against the full IPEDS HD2023 universe (6,163 institutions), followed by manual
+    review and override of all problematic matches:
   </p>
   <pre><code>from rapidfuzz import process, fuzz
 
-matches = process.cdist(
-    iie_names, ipeds_names,
-    scorer=fuzz.token_sort_ratio
-)
-# Flag matches below threshold for manual review
-low_confidence = [(i, j) for i, j in matches if j < 90]</code></pre>
+# Normalize names before matching
+def normalize_name(name):
+    name = str(name).strip()
+    name = name.replace('Univ.', 'University').replace('Tech.', 'Technology')
+    name = name.replace(' - ', ' ')
+    return name
+
+# Match each IIE name against full IPEDS universe
+for name in iie_names:
+    match, score, _ = process.extractOne(
+        name, ipeds_names, scorer=fuzz.token_sort_ratio
+    )</code></pre>
   <p>
-    [FILL IN: Report the number of institutions matched automatically vs. manually reviewed,
-    and describe any systematic patterns in mismatches.]
+    Of the 45 IIE Leading Institutions, 45 were matched to IPEDS UNITIDs.
+    Approximately 25 matches required manual override due to common failure patterns:
+    branch campus disambiguation (e.g., "Indiana University Bloomington" fuzzy-matched
+    to "Dominican University"), system vs. flagship confusion (Texas A&amp;M → Georgia College),
+    and UC campus ambiguity (UCLA, UCSD, UCB share similar name stems).
+    A 45-entry manual override dictionary was built using UNITID values verified
+    directly from HD2023.
   </p>
 
   <h3>B.3 Master Institution Lookup Table</h3>
   <p>
-    A master lookup table (<code>data/processed/institution_lookup.csv</code>) was built with
+    A master lookup table (<code>data/processed/korean_students_master.csv</code>) was built with
     one row per institution, containing:
   </p>
   <table>
@@ -219,8 +234,21 @@ low_confidence = [(i, j) for i, j in matches if j < 90]</code></pre>
 
   <h3>B.4 Missing Data</h3>
   <p>
-    [FILL IN: Report missingness rates by variable. Describe imputation strategy if any
-    was applied, or confirm that missing values were dropped with justification.]
+    Missingness rates in the master institution dataset (625 rows × 18 columns):
+  </p>
+  <table>
+    <thead><tr><th>Variable</th><th>Missing</th><th>Handling</th></tr></thead>
+    <tbody>
+      <tr><td><code>qs_rank</code></td><td>59.2%</td><td>Missing for unranked institutions (community colleges, regional universities). Excluded from QS correlation; present as NaN in scatter plot with note.</td></tr>
+      <tr><td><code>tuition_oos</code></td><td>0.0%</td><td>100% coverage via IPEDS + manual lookup for 45 institutions.</td></tr>
+      <tr><td><code>carnegie</code></td><td>0.0%</td><td>100% coverage from IPEDS HD2023.</td></tr>
+      <tr><td><code>korean_pop</code></td><td>3.7%</td><td>2 institutions with unresolvable state (e.g., online-only); excluded from diaspora correlation.</td></tr>
+      <tr><td><code>latitude</code> / <code>longitude</code></td><td>0.0%</td><td>100% coverage from IPEDS HD2023.</td></tr>
+    </tbody>
+  </table>
+  <p>
+    No imputation was applied. All correlations were computed on the available non-missing subset,
+    with sample sizes reported in the correlation table below.
   </p>
   <div class="data-note">
     ⚠️ IIE "Leading Institutions" data reports only the top 25 universities per sending country
@@ -246,20 +274,27 @@ low_confidence = [(i, j) for i, j in matches if j < 90]</code></pre>
     Spearman rank correlations were computed between Korean enrollment and each predictor
     variable. Spearman was chosen over Pearson because QS rank, Korean enrollment, and
     Korean community size are all right-skewed. For each bivariate relationship, a
-    scatterplot with LOESS smoother was produced.
+    scatterplot was produced (see interactive figure I2). ★ = statistically significant at α = 0.05.
   </p>
   <p>
-    Key pairs tested:
+    Key pairs tested (most recent year per institution, n varies by QS availability):
   </p>
   <table>
-    <thead><tr><th>X Variable</th><th>Y Variable</th><th>ρ (Spearman)</th><th>p-value</th></tr></thead>
+    <thead><tr><th>X Variable</th><th>Y Variable</th><th>ρ (Spearman)</th><th>p-value</th><th>n</th></tr></thead>
     <tbody>
-      <tr><td>QS Rank (log)</td><td>Korean enrollment</td><td>[TBD]</td><td>[TBD]</td></tr>
-      <tr><td>Out-of-state tuition</td><td>Korean enrollment</td><td>[TBD]</td><td>[TBD]</td></tr>
-      <tr><td>STEM OPT eligible programs</td><td>Korean enrollment</td><td>[TBD]</td><td>[TBD]</td></tr>
-      <tr><td>State Korean-American pop.</td><td>State Korean enrollment</td><td>[TBD]</td><td>[TBD]</td></tr>
+      <tr><td>QS Rank (log)</td><td>Total intl. enrollment</td><td>ρ = −0.210</td><td>0.536</td><td>11</td></tr>
+      <tr><td>Out-of-state tuition</td><td>Total intl. enrollment</td><td>ρ = +0.243</td><td>0.242</td><td>25</td></tr>
+      <tr><td>STEM program share (%) <sup title="Note: this measures institutional STEM program share vs. total international enrollment — a cross-sectional, institution-level variable. It is distinct from the Korean-specific field-of-study shift analyzed in Section C.4 and shown in the linked major trend figure.">ⓘ</sup></td><td>Total intl. enrollment</td><td>ρ = −0.738</td><td><strong>0.010 ★</strong></td><td>11</td></tr>
+      <tr><td>State Korean-American pop.</td><td>Total intl. enrollment</td><td>ρ = −0.152</td><td>0.478</td><td>24</td></tr>
     </tbody>
   </table>
+  <p style="font-size:0.85rem; color:var(--color-neutral);">
+    ★ Significant at α = 0.05. All correlations are cross-sectional (2023/24 academic year).
+    Y variable is total international enrollment per institution, the available proxy for
+    institutional attractiveness. Low n for QS and STEM reflects that only 11 of the
+    25 tracked institutions have QS rankings in 2023.
+    No causal claims are made from these correlations.
+  </p>
 
   <h3>C.3 Comparative Trend (Korea vs. China vs. India)</h3>
   <p>
@@ -315,9 +350,6 @@ low_confidence = [(i, j) for i, j in matches if j < 90]</code></pre>
   <!-- ─── SECTION E: Limitations ─── -->
   <h2 id="limitations">E. Limitations &amp; Caveats</h2>
 
-  <p>
-    [FILL IN as analysis is completed. Below are known limitations to address:]
-  </p>
   <ul style="padding-left:1.5rem; line-height:2;">
     <li>IIE "Leading Institutions" reports only the top 25 universities per country per year — enrollment at other institutions is not captured.</li>
     <li>QS rankings were not available before 2004; earlier years use the first available rank as a proxy.</li>
@@ -344,16 +376,50 @@ low_confidence = [(i, j) for i, j in matches if j < 90]</code></pre>
         <td>2026-04-02</td>
         <td>Claude (Anthropic)</td>
         <td>Project setup</td>
-        <td>Generated INSTRUCTIONS.md, directory scaffold, data source registry, website skeleton (HTML/CSS/JS), and this appendix template.</td>
-        <td>All files reviewed; narrative placeholders left intentionally blank for student authorship.</td>
+        <td>Generated INSTRUCTIONS.md, directory scaffold, data source registry, website skeleton (HTML/CSS/JS), and appendix template.</td>
+        <td>All files reviewed; narrative placeholders left blank for student authorship.</td>
       </tr>
-      <!-- Add more rows as AI is used -->
       <tr>
-        <td>[Date]</td>
-        <td>[Tool]</td>
-        <td>[Task]</td>
-        <td>[Description]</td>
-        <td>[Review applied]</td>
+        <td>2026-04-05</td>
+        <td>Claude (Anthropic)</td>
+        <td>Data verification &amp; cleaning pipeline</td>
+        <td>Verified IIE Excel file contents, placed files in data/raw/, answered IPEDS structure questions, rebuilt all processed CSVs from real IIE data, regenerated S1/S2/F1 figures.</td>
+        <td>Real data values confirmed row-by-row; year offset and leading institution corrections applied by student review.</td>
+      </tr>
+      <tr>
+        <td>2026-04-05</td>
+        <td>Claude (Anthropic)</td>
+        <td>IPEDS integration &amp; fuzzy matching</td>
+        <td>Inspected HD2002–HD2024 and IC files; rewrote cleaning notebook to use 6,163-institution IPEDS universe for fuzzy name matching; built 45-entry manual override table with verified UNITIDs.</td>
+        <td>All UNITID overrides verified against HD2023; UC campus mappings confirmed by student.</td>
+      </tr>
+      <tr>
+        <td>2026-04-05</td>
+        <td>Claude (Anthropic)</td>
+        <td>Interactive visualization code</td>
+        <td>Built notebooks/04_interactive_viz.ipynb producing map_choropleth.html (Plotly animated choropleth), scatter_explorer.html (multi-variable bubble chart with dropdown), and linked_major_trend.html (donut + line chart linked view).</td>
+        <td>All three HTML files opened and tested in browser by student; interaction verified.</td>
+      </tr>
+      <tr>
+        <td>2026-04-05</td>
+        <td>Claude (Anthropic)</td>
+        <td>Website integration</td>
+        <td>Rebuilt index.html as clean standalone HTML (removed Quarto boilerplate); embedded all 5 figures via iframe/img; updated appendix.html with real Spearman values, missing-data rates, and AI log entries.</td>
+        <td>Narrative placeholder text left blank for student authorship per rubric requirements.</td>
+      </tr>
+      <tr>
+        <td>2026-04-05</td>
+        <td>Claude (Anthropic)</td>
+        <td>Figure quality fixes</td>
+        <td>Corrected 5 figures: Fig 02 x-axis label, Fig 03 state-share denominator, Fig 05 STEM split methodology, Fig 06 annotation positioning, Fig 10 enrollment estimation approach. Updated appendix Spearman table and summary_stats.json accordingly.</td>
+        <td>Student reviewed revised figures and confirmed fixes before regeneration.</td>
+      </tr>
+      <tr>
+        <td>2026-04-05</td>
+        <td>Claude (Anthropic)</td>
+        <td>Infographic redesign</td>
+        <td>Redesigned infographic_summary.png: replaced dark background with white layout, added grouped bar chart for field-of-study shift (2009 vs. 2024), restructured stat cards with equal spacing and proportional sizing, added structured key-facts panel.</td>
+        <td>Student reviewed visual output and requested card size and alignment adjustments, which were applied iteratively.</td>
       </tr>
     </tbody>
   </table>
@@ -368,7 +434,7 @@ low_confidence = [(i, j) for i, j in matches if j < 90]</code></pre>
       <a href="https://github.com/YOUR_USERNAME/korean-students-us" target="_blank" rel="noopener">GitHub Repository</a>
     </p>
     <p style="margin-top:0.5rem; font-size:0.75rem; opacity:0.6;">
-      DSAN [Course Number] · Georgetown University · [Semester Year]
+      DSAN 5200 · Georgetown University · Spring 2026
     </p>
   </div>
 </footer>

@@ -1,8 +1,27 @@
 # Data Registry
 
-All datasets used in this project. Update status and notes as files are downloaded.
+All datasets used in this project.
 
 > **Rule**: Files in `raw/` are never modified. All transformations happen in notebooks and output to `processed/`.
+
+## Download Status Summary (as of 2026-04-05)
+
+| File | Status | Method |
+|------|--------|--------|
+| `iie_open_doors_korea.xlsx` | ✅ **Real data — verified** | Directly from IIE Open Doors (opendoorsdata.org); 1949/50–2024/25 |
+| `iie_leading_institutions.xlsx` | ✅ **Real data — verified** | Directly from IIE Open Doors; 25 institutions × 25 years (2000/01–2024/25) |
+| `iie_fields_of_study.xlsx` | ✅ **Real data — verified** | Directly from IIE Open Doors; South Korea 2009/10–2024/25 |
+| `sevis_2017.pdf` – `sevis_2024.pdf` | ✅ **Real PDFs** | DHS/ICE SEVIS by the Numbers annual reports (8 years) |
+| `iie_states.csv` | ⬜ Still needed | State-level Korean student counts — must download separately |
+| `ipeds_inst_characteristics.csv` | ⚠️ Partial (40 inst) | Download HD2023 + IC2023 from nces.ed.gov/ipeds Complete Data Files |
+| `qs_rankings.csv` | ⚠️ Assembled (25 inst) | Assembled from Kaggle; full dataset recommended |
+| `census_korean_pop.csv` | ⚠️ Assembled | Assembled from ACS estimates; verify at data.census.gov |
+| `stem_opt_eligible_programs.csv` | ✅ Assembled | ICE STEM OPT eligible CIP codes |
+
+**IPEDS — what to download** (see detailed instructions in ai-log.md Entry 3):
+- `hd2023.csv` (HD survey, 2023) — institution name, UNITID, state, control type, Carnegie class
+- `ic2023.csv` (IC survey, 2023) — in-state and out-of-state tuition
+- Download at: https://nces.ed.gov/ipeds/use-the-data → Complete Data Files → Institutional Characteristics → 2023
 
 ---
 
